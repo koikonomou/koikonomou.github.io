@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dr. Katerina Maria Oikonomou</title>
+  <meta name="description" content="Dr. Katerina Maria Oikonomou — robotics, spiking neural networks, multimodal learning." />
+  <style>
+    :root { --text:#222; --muted:#555; --line:#e7e7e7; --chip:#f5f5f5; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; color: var(--text); background:#fff; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 54px 18px; }
+    h1 { margin: 0 0 6px; font-size: 34px; letter-spacing: -0.02em; }
+    h2 { margin: 0 0 10px; font-size: 18px; }
+    p { line-height: 1.55; margin: 10px 0; }
+    a { color: inherit; }
+    .muted { color: var(--muted); }
+    .top { display: grid; grid-template-columns: 140px 1fr; gap: 18px; align-items: center; }
+    @media (max-width: 700px) { .top { grid-template-columns: 1fr; } }
+    .photo {
+      width: 140px; height: 140px; border-radius: 18px;
+      background: var(--chip); border: 1px solid var(--line);
+      display:flex; align-items:center; justify-content:center; color:#777; font-size: 12px;
+      overflow:hidden;
+    }
+    .bar { margin-top: 10px; display:flex; flex-wrap:wrap; gap: 10px; }
+    .chip {
+      display:inline-block; padding: 7px 10px; border-radius: 999px;
+      background: var(--chip); border: 1px solid var(--line); font-size: 14px;
+    }
+    .card { border: 1px solid var(--line); border-radius: 16px; padding: 18px; margin: 16px 0; }
+    ul { margin: 10px 0 0; padding-left: 18px; }
+    li { margin: 8px 0; line-height: 1.45; }
+    .footer { margin-top: 26px; font-size: 13px; color: var(--muted); }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <section class="top">
+      <div class="photo">
+        <img src="photo.jpg" alt="Katerina Oikonomou" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+
+      <div>
+        <h1>Dr. Katerina Maria Oikonomou</h1>
+        <div class="muted"> Computer Vision • Spiking Neural Networks • Multimodal Learning</div>
+
+        <div class="bar" aria-label="Links">
+          <span class="chip"><a href="https://scholar.google.com/citations?user=sT18y-cAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a></span>
+          <span class="chip"><a href="https://www.linkedin.com/in/katerina-maria-oikonomou-0b2b3716a/" target="_blank" rel="noreferrer">LinkedIn</a></span>
+          <span class="chip"><a href="https://robotics.pme.duth.gr/koikonomou/" target="_blank" rel="noreferrer">Lab page</a></span>
+          <span class="chip"><a href="mailto:k.m.oikonomou@gmail.com">k.m.oikonomou@gmail.com</a></span>
+          <!-- Optional: add ORCID / GitHub later -->
+        </div>
+
+        <p class="muted" style="margin-top:12px">
+          Short, direct description of your research focus goes here (2–3 lines max).
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Affiliations</h2>
+      <ul>
+        <li>Democritus University of Thrace (DUTH), Xanthi — Laboratory of Robotics &amp; Automation</li>
+        <li>NCSR “Demokritos”, Athens — Institute of Informatics and Telecommunications</li>
+      </ul>
+      <p class="muted" style="margin-top:10px">
+        If you want this to be bulletproof, add dates/roles (e.g., “2021–present”).
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Teaching</h2>
+
+      <p class="muted" style="margin-bottom:8px"><strong>Academic year 2025–2026</strong></p>
+      <ul>
+        <li><strong>Fall semester:</strong> Programming Languages (C) — Lab sessions, Harokopio University, Greece</li>
+        <li><strong>Spring semester:</strong> Computer Vision and Graph Theory — University of West Attica, Greece</li>
+      </ul>
+
+      <p class="muted" style="margin:16px 0 8px"><strong>During PhD program (co-taught)</strong></p>
+      <ul>
+        <li><strong>Fall 2022–2023:</strong> Control Systems - Democritus University of Thace, Greece </li>
+        <li><strong>Spring 2021–2022:</strong> Robotics- Democritus University of Thace, Greece </li>
+        <li><strong>Fall 2021–2022:</strong> Control Systems - Democritus University of Thace, Greece </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Publications</h2>
+      <p>
+        For the full list, see my <a href="https://scholar.google.com/citations?user=sT18y-cAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar profile</a>.
+      </p>
+      <!-- Optional: add 3–5 selected publications here -->
+    </section>
+
+    <section class="card">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Project title</strong> — one line on what it is + link.</li>
+        <li><strong>Project title</strong> — one line on what it is + link.</li>
+      </ul>
+    </section>
+
+    <div class="footer">© <span id="y"></span> Katerina Oikonomou</div>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
