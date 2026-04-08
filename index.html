@@ -51,34 +51,25 @@
     /* ── HERO ── */
     #hero {
       min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 5rem 8rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      padding-top: 5rem;
     }
 
     .hero-text {
-      display: flex; flex-direction: column;
-      max-width: 660px;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 4rem 5rem 8rem;
       animation: fadeUp .9s ease both;
-    }
-
-    .hero-identity {
-      display: flex; align-items: center; gap: 1.4rem;
-      margin-bottom: 2rem;
-    }
-    .hero-avatar {
-      width: 68px; height: 68px; border-radius: 50%;
-      object-fit: cover; object-position: top center;
-      border: 2px solid var(--rule); flex-shrink: 0;
     }
     .hero-label {
       font-family: var(--sans); font-size: .72rem; letter-spacing: .2em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: .35rem;
+      text-transform: uppercase; color: var(--accent); margin-bottom: .5rem;
     }
     .hero-affil {
-      font-size: .82rem; color: var(--mid);
+      font-size: .82rem; color: var(--mid); margin-bottom: 2rem;
     }
     .hero-name {
-      font-family: var(--serif); font-size: clamp(2.8rem, 5vw, 4.4rem);
+      font-family: var(--serif); font-size: clamp(2.8rem, 4vw, 4.4rem);
       font-weight: 300; line-height: 1.1; margin-bottom: 1.8rem;
     }
     .hero-tags {
@@ -116,6 +107,16 @@
     .btn-primary:hover { background: #2d5a72; }
     .btn-ghost { border: 1px solid var(--rule); color: var(--mid); }
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-portrait {
+      position: relative; overflow: hidden;
+      animation: fadeIn 1.2s ease both;
+    }
+    .hero-portrait img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+    }
 
     /* ── SECTIONS ── */
     section { padding: 6rem 8rem; border-top: 1px solid var(--rule); }
@@ -251,8 +252,9 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      #hero { padding: 7rem 2rem 4rem; }
-      .hero-text { max-width: 100%; }
+      #hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-text { padding: 7rem 2rem 3rem; }
+      .hero-portrait { height: 70vw; max-height: 420px; }
       section { padding: 4rem 2rem; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .teach-grid { grid-template-columns: 1fr; }
@@ -273,19 +275,14 @@
     <a href="#publications">Publications</a>
     <a href="#teaching">Teaching</a>
     <a href="#projects">Projects</a>
-    <a href="mailto:k.m.oikonomou@gmail.com">Contact</a>
+    <a href="/cdn-cgi/l/email-protection#167d387b38797f7d7978797b796356717b777f7a3875797b">Contact</a>
   </nav>
 
   <!-- HERO -->
   <section id="hero">
     <div class="hero-text">
-      <div class="hero-identity">
-        <img class="hero-avatar" src="photo.jpg" alt="Katerina Maria Oikonomou" />
-        <div>
-          <div class="hero-label">Postdoctoral Researcher · AI &amp; Robotics</div>
-          <div class="hero-affil">DUTH &amp; NCSR "Demokritos"</div>
-        </div>
-      </div>
+      <div class="hero-label">Postdoctoral Researcher · AI &amp; Robotics</div>
+      <div class="hero-affil">DUTH &amp; NCSR "Demokritos"</div>
       <h1 class="hero-name">
         Katerina<br>
         Maria<br>
@@ -313,6 +310,11 @@
         <a class="btn btn-ghost" href="https://github.com/koikonomou" target="_blank">GitHub</a>
         <a class="btn btn-ghost" href="https://robotics.pme.duth.gr/koikonomou/" target="_blank">Lab Page</a>
       </div>
+    </div>
+
+    <div class="hero-portrait">
+      <img src="https://robotics.pme.duth.gr/koikonomou/wp-content/uploads/2023/10/1696861629032-768x1024.jpg"
+           alt="Katerina Maria Oikonomou" />
     </div>
   </section>
 
@@ -342,7 +344,7 @@
             Automation Systems at NTUA.
           </p>
           <p>
-            <a href="mailto:k.m.oikonomou@gmail.com" style="color:var(--accent)">k.m.oikonomou@gmail.com</a>
+            <a href="/cdn-cgi/l/email-protection#375c195a19585e5c5859585a584277505a565e5b1954585a" style="color:var(--accent)"><span class="__cf_email__" data-cfemail="c1aaefacefaea8aaaeafaeacaeb481a6aca0a8adefa2aeac">[email&#160;protected]</span></a>
           </p>
         </div>
         <div>
@@ -535,7 +537,7 @@
   <!-- FOOTER -->
   <footer>
     <p>© 2025 Katerina Maria Oikonomou &nbsp;·&nbsp;
-      <a href="mailto:k.m.oikonomou@gmail.com">k.m.oikonomou@gmail.com</a>
+      <a href="/cdn-cgi/l/email-protection#503b7e3d7e3f393b3f3e3f3d3f2510373d31393c7e333f3d"><span class="__cf_email__" data-cfemail="cca7e2a1e2a3a5a7a3a2a3a1a3b98caba1ada5a0e2afa3a1">[email&#160;protected]</span></a>
       &nbsp;·&nbsp;
       <a href="https://github.com/koikonomou" target="_blank">GitHub</a>
       &nbsp;·&nbsp;
@@ -543,7 +545,7 @@
     </p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
@@ -596,22 +598,4 @@
             <span class="pub-code" style="font-family:var(--serif);font-style:italic;font-size:.85rem;color:var(--accent2);min-width:3.5rem;">${year}</span>
             <div>
               <div class="pub-title">${title}</div>
-              ${venueStr ? `<div class="pub-venue">${venueStr}</div>` : ''}
-              ${doiUrl ? `<a class="pub-link" href="${doiUrl}" target="_blank">${doiHost} ↗</a>` : ''}
-            </div>
-            ${typeBadge(w.type)}
-          `;
-          list.appendChild(item);
-        });
-
-      } catch (err) {
-        loading.textContent = 'Could not load publications — please visit my Google Scholar profile.';
-        console.error(err);
-      }
-    }
-
-    loadPubs();
-  </script>
-
-</body>
-</html>
+              ${venueStr ? `<div class="pub-venue">${venueStr}</div>
