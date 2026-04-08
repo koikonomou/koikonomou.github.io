@@ -1,124 +1,689 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Katerina Maria Oikonomou</title>
-  <meta name="description" content="Dr. Katerina Maria Oikonomou — robotics, spiking neural networks, multimodal learning." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    :root { --text:#222; --muted:#555; --line:#e7e7e7; --chip:#f5f5f5; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; color: var(--text); background:#fff; }
-    .wrap { max-width: 920px; margin: 0 auto; padding: 54px 18px; }
-    h1 { margin: 0 0 6px; font-size: 34px; letter-spacing: -0.02em; }
-    h2 { margin: 0 0 10px; font-size: 18px; }
-    p { line-height: 1.55; margin: 10px 0; }
-    a { color: inherit; }
-    .muted { color: var(--muted); }
-    .top { display: grid; grid-template-columns: 140px 1fr; gap: 18px; align-items: center; }
-    @media (max-width: 700px) { .top { grid-template-columns: 1fr; } }
-    .photo {
-      width: 140px; height: 140px; border-radius: 18px;
-      background: var(--chip); border: 1px solid var(--line);
-      display:flex; align-items:center; justify-content:center; color:#777; font-size: 12px;
-      overflow:hidden;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:   #f7f4ef;
+      --ink:     #1a1714;
+      --mid:     #5a5450;
+      --accent:  #3d6b84;
+      --accent2: #b8956a;
+      --rule:    #ddd8d0;
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --sans:    'DM Sans', sans-serif;
     }
-    .bar { margin-top: 10px; display:flex; flex-wrap:wrap; gap: 10px; }
-    .chip {
-      display:inline-block; padding: 7px 10px; border-radius: 999px;
-      background: var(--chip); border: 1px solid var(--line); font-size: 14px;
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
     }
-    .card { border: 1px solid var(--line); border-radius: 16px; padding: 18px; margin: 16px 0; }
-    ul { margin: 10px 0 0; padding-left: 18px; }
-    li { margin: 8px 0; line-height: 1.45; }
-    .footer { margin-top: 26px; font-size: 13px; color: var(--muted); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: flex-end; gap: 2.5rem;
+      padding: 1.4rem 4rem;
+      background: rgba(247,244,239,.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+    }
+    nav a {
+      font-family: var(--sans); font-size: .78rem; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--mid); text-decoration: none;
+      transition: color .2s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 5rem;
+    }
+
+    .hero-text {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 6rem 5rem 6rem 8rem;
+      animation: fadeUp .9s ease both;
+    }
+    .hero-label {
+      font-family: var(--sans); font-size: .72rem; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem;
+    }
+    .hero-name {
+      font-family: var(--serif); font-size: clamp(2.8rem, 5vw, 4.6rem);
+      font-weight: 300; line-height: 1.1; margin-bottom: 1.8rem;
+    }
+    .hero-name em { font-style: italic; color: var(--accent2); }
+    .hero-tags {
+      display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2.2rem;
+    }
+    .tag {
+      font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+      border: 1px solid var(--accent); color: var(--accent);
+      padding: .3rem .85rem; border-radius: 2rem;
+    }
+    .hero-bio {
+      font-size: 1rem; color: var(--mid); max-width: 46ch; line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+    .hero-links { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-size: .78rem; letter-spacing: .08em; text-transform: uppercase;
+      text-decoration: none; padding: .65rem 1.4rem; border-radius: 2rem;
+      transition: all .2s;
+    }
+    .btn-primary {
+      background: var(--accent); color: #fff;
+    }
+    .btn-primary:hover { background: #2d5a72; }
+    .btn-ghost {
+      border: 1px solid var(--rule); color: var(--mid);
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-image {
+      position: relative; overflow: hidden;
+      animation: fadeIn 1.2s ease both;
+    }
+    .hero-image::before {
+      content: '';
+      position: absolute; inset: 3rem 3rem 0 3rem;
+      border: 1px solid var(--rule); border-radius: 2px; z-index: 0;
+    }
+    .hero-image img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: top center;
+      clip-path: inset(3rem 3rem 0 5rem);
+    }
+    .hero-image .stat-card {
+      position: absolute; bottom: 4rem; left: 1rem; z-index: 10;
+      display: flex; gap: 1rem;
+    }
+    .stat {
+      background: var(--cream); border: 1px solid var(--rule);
+      padding: .9rem 1.2rem; border-radius: 4px; text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+    .stat-n {
+      font-family: var(--serif); font-size: 2rem; font-weight: 300;
+      color: var(--accent); display: block; line-height: 1;
+    }
+    .stat-l {
+      font-size: .65rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--mid); display: block; margin-top: .3rem;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 8rem; border-top: 1px solid var(--rule); }
+    section:nth-child(even) { background: #f2ede6; }
+
+    .section-header {
+      display: flex; align-items: baseline; gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .section-num {
+      font-family: var(--serif); font-size: .9rem; color: var(--accent2);
+      font-style: italic;
+    }
+    h2 {
+      font-family: var(--serif); font-size: clamp(1.9rem, 3vw, 2.7rem);
+      font-weight: 300;
+    }
+    h3 {
+      font-family: var(--serif); font-size: 1.25rem; font-weight: 400;
+      margin-bottom: .3rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid; grid-template-columns: 2fr 1fr; gap: 5rem;
+    }
+    .about-text p { color: var(--mid); margin-bottom: 1rem; }
+    .research-pills { display: flex; flex-direction: column; gap: .8rem; }
+    .pill {
+      display: flex; align-items: flex-start; gap: .8rem;
+      padding: 1rem 1.2rem; background: var(--cream);
+      border-left: 2px solid var(--accent); border-radius: 0 4px 4px 0;
+      font-size: .88rem; color: var(--mid); line-height: 1.5;
+    }
+    .pill-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+      margin-top: .4rem; flex-shrink: 0;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list { display: flex; flex-direction: column; gap: 0; }
+    .pub-item {
+      display: grid; grid-template-columns: auto 1fr auto;
+      gap: 1.5rem; align-items: baseline;
+      padding: 1.6rem 0; border-bottom: 1px solid var(--rule);
+      transition: background .15s;
+    }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-code {
+      font-family: var(--serif); font-style: italic; font-size: .85rem;
+      color: var(--accent2); min-width: 3.5rem;
+    }
+    .pub-title { font-size: .95rem; color: var(--ink); line-height: 1.5; }
+    .pub-venue {
+      font-size: .8rem; color: var(--mid); margin-top: .3rem; font-style: italic;
+    }
+    .pub-badge {
+      font-size: .65rem; letter-spacing: .08em; text-transform: uppercase;
+      padding: .2rem .6rem; border-radius: 2rem; white-space: nowrap;
+    }
+    .q1 { background: #dceef5; color: var(--accent); }
+    .q2 { background: #f5ead8; color: #8a6535; }
+    .review { background: #e8e8e8; color: #777; }
+    .conf { background: #e8f0e8; color: #3a6e3a; }
+    .pub-link {
+      display: block; margin-top: .4rem;
+      font-size: .75rem; color: var(--accent); text-decoration: none;
+      letter-spacing: .04em;
+    }
+    .pub-link:hover { text-decoration: underline; }
+
+    /* ── TEACHING ── */
+    .teach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .teach-card {
+      padding: 1.8rem 2rem; border: 1px solid var(--rule); border-radius: 4px;
+      background: var(--cream);
+    }
+    .teach-year {
+      font-size: .7rem; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1rem; display: block;
+    }
+    .teach-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: .8rem 0; border-bottom: 1px solid var(--rule);
+    }
+    .teach-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .teach-sem {
+      font-size: .7rem; text-transform: uppercase; letter-spacing: .08em;
+      color: var(--mid); min-width: 3.5rem; padding-top: .1rem;
+    }
+    .teach-info { font-size: .88rem; color: var(--ink); line-height: 1.5; }
+    .teach-uni { font-size: .78rem; color: var(--mid); margin-top: .15rem; }
+
+    /* ── PROJECTS ── */
+    .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .proj-card {
+      padding: 1.6rem 1.8rem; border: 1px solid var(--rule); border-radius: 4px;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .proj-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.07); transform: translateY(-2px); }
+    .proj-name {
+      font-family: var(--serif); font-size: 1.1rem; font-weight: 400;
+      color: var(--accent); margin-bottom: .5rem;
+    }
+    .proj-desc { font-size: .84rem; color: var(--mid); line-height: 1.6; }
+    .proj-date {
+      font-size: .72rem; color: var(--accent2); margin-top: .8rem;
+      letter-spacing: .04em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center; padding: 3rem;
+      border-top: 1px solid var(--rule);
+      font-size: .8rem; color: var(--mid);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      #hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-text { padding: 7rem 2rem 3rem; }
+      .hero-image { height: 55vw; min-height: 300px; }
+      .hero-image img { clip-path: inset(2rem 2rem 0 2rem); }
+      section { padding: 4rem 2rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .teach-grid { grid-template-columns: 1fr; }
+      .proj-grid { grid-template-columns: 1fr 1fr; }
+      nav { padding: 1rem 1.5rem; gap: 1.5rem; }
+    }
+    @media (max-width: 560px) {
+      .proj-grid { grid-template-columns: 1fr; }
+      .pub-item { grid-template-columns: 1fr; gap: .5rem; }
+    }
   </style>
 </head>
-
 <body>
-  <main class="wrap">
 
-    <section class="top">
-      <div class="photo">
-        <img src="photo.jpg" alt="Katerina Oikonomou" style="width:100%;height:100%;object-fit:cover;">
+  <!-- NAV -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#publications">Publications</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#projects">Projects</a>
+    <a href="mailto:k.m.oikonomou@gmail.com">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-text">
+      <span class="hero-label">Postdoctoral Researcher · AI &amp; Robotics</span>
+      <h1 class="hero-name">
+        Katerina<br>
+        <em>Maria</em><br>
+        Oikonomou
+      </h1>
+      <div class="hero-tags">
+        <span class="tag">Spiking Neural Networks</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Robotics</span>
+        <span class="tag">Multimodal Learning</span>
+      </div>
+      <p class="hero-bio">
+        I build bio-inspired AI systems that perceive and act in the physical world —
+        bridging spiking neural networks, computer vision, and robotics to create
+        efficient, intelligent machines.
+      </p>
+      <div class="hero-links">
+        <a class="btn btn-primary" href="https://scholar.google.com/citations?user=sT18y-cAAAAJ&hl=en" target="_blank">
+          ↗ Google Scholar
+        </a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/katerina-maria-oikonomou-0b2b3716a/" target="_blank">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/koikonomou" target="_blank">GitHub</a>
+        <a class="btn btn-ghost" href="https://robotics.pme.duth.gr/koikonomou/" target="_blank">Lab Page</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="photo.jpg" alt="Dr. Katerina Maria Oikonomou" />
+      <div class="stat-card">
+        <div class="stat">
+          <span class="stat-n">143</span>
+          <span class="stat-l">Citations</span>
+        </div>
+        <div class="stat">
+          <span class="stat-n">6</span>
+          <span class="stat-l">h-index</span>
+        </div>
+        <div class="stat">
+          <span class="stat-n">15</span>
+          <span class="stat-l">Papers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="reveal">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>About</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a Postdoctoral Researcher at the <strong>Democritus University of Thrace (DUTH)</strong>,
+            Department of Production and Management Engineering, and an affiliated researcher
+            at <strong>NCSR "Demokritos"</strong>, Institute of Informatics and Telecommunications, Athens.
+          </p>
+          <p>
+            My research sits at the intersection of artificial intelligence, computational neuroscience,
+            and robotics. I am particularly interested in how biological principles of neural computation —
+            such as spike-based communication — can lead to more efficient and adaptive AI systems.
+          </p>
+          <p>
+            I completed my PhD at DUTH (2021–2025) under Prof. Antonios Gasteratos, on
+            <em>Spiking Neural Networks for Perception and Control in Human Assistive Robotic Systems</em>.
+            Before that, I studied Physics at the University of Patras and completed an MSc in
+            Automation Systems at NTUA.
+          </p>
+          <p>
+            <a href="mailto:k.m.oikonomou@gmail.com" style="color:var(--accent)">k.m.oikonomou@gmail.com</a>
+          </p>
+        </div>
+        <div>
+          <div class="research-pills">
+            <div class="pill"><span class="pill-dot"></span>Spiking Neural Networks for reinforcement learning &amp; control</div>
+            <div class="pill"><span class="pill-dot"></span>Multimodal perception &amp; sensor fusion (event cameras, RGB)</div>
+            <div class="pill"><span class="pill-dot"></span>Action recognition for ambient assisted living</div>
+            <div class="pill"><span class="pill-dot"></span>Bio-inspired feature discrimination &amp; modality fusion</div>
+            <div class="pill"><span class="pill-dot"></span>AI for scientific &amp; industrial applications (plasma, mining)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="reveal">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>Publications</h2>
       </div>
 
-      <div>
-        <h1>Dr. Katerina Maria Oikonomou</h1>
-        <div class="muted"> Computer Vision • Spiking Neural Networks • Multimodal Learning</div>
+      <div class="pub-list">
 
-        <div class="bar" aria-label="Links">
-          <span class="chip"><a href="https://scholar.google.com/citations?user=sT18y-cAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a></span>
-          <span class="chip"><a href="https://www.linkedin.com/in/katerina-maria-oikonomou-0b2b3716a/" target="_blank" rel="noreferrer">LinkedIn</a></span>
-          <span class="chip"><a href="https://robotics.pme.duth.gr/koikonomou/" target="_blank" rel="noreferrer">Lab page</a></span>
-          <span class="chip"><a href="mailto:k.m.oikonomou@gmail.com">k.m.oikonomou@gmail.com</a></span>
-          <!-- Optional: add ORCID / GitHub later -->
+        <!-- JOURNALS -->
+        <div class="pub-item">
+          <span class="pub-code">JRN1</span>
+          <div>
+            <div class="pub-title">Spiking Neural Network Feature Discrimination Boosts Modality Fusion</div>
+            <div class="pub-venue">IEEE Transactions on Cognitive and Developmental Systems · IF 4.9</div>
+            <a class="pub-link" href="https://ieeexplore.ieee.org/document/11297437" target="_blank">ieeexplore.ieee.org ↗</a>
+          </div>
+          <span class="pub-badge q1">Q1</span>
         </div>
 
-        <p class="muted" style="margin-top:12px">
-          I am a researcher in robotics and artificial intelligence, focusing on spiking neural networks for multimodal perception and decision-making in robotic systems.
-          My work sits at the intersection of machine learning, computer vision, and bio-inspired computation, aiming to build efficient models for perception, control, and interaction in dynamic environments.
-        </p>
+        <div class="pub-item">
+          <span class="pub-code">JRN2</span>
+          <div>
+            <div class="pub-title">A Hybrid Reinforcement Learning Approach with a Spiking Actor Network for Efficient Robotic Arm Target Reaching</div>
+            <div class="pub-venue">IEEE Robotics and Automation Letters · IF 5.6</div>
+            <a class="pub-link" href="https://doi.org/10.1109/LRA.2023.3264836" target="_blank">doi.org/10.1109/LRA ↗</a>
+          </div>
+          <span class="pub-badge q1">Q1</span>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-code">JRN3</span>
+          <div>
+            <div class="pub-title">A Survey on Technical Challenges of Assistive Robotics for Elder People in Domestic Environments: The ASPiDA Concept</div>
+            <div class="pub-venue">IEEE Transactions on Medical Robotics and Bionics · IF 3.4</div>
+            <a class="pub-link" href="https://doi.org/10.1109/TMRB.2023.3261342" target="_blank">doi.org/10.1109/TMRB ↗</a>
+          </div>
+          <span class="pub-badge q1">Q1</span>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-code">JRN4</span>
+          <div>
+            <div class="pub-title">A Hybrid Spiking Neural Network Reinforcement Learning Agent for Energy-Efficient Object Manipulation</div>
+            <div class="pub-venue">Machines, 11(2), 162 · IF 2.5</div>
+            <a class="pub-link" href="https://doi.org/10.3390/machines11020162" target="_blank">doi.org/10.3390 ↗</a>
+          </div>
+          <span class="pub-badge q2">Q2</span>
+        </div>
+
+        <!-- CONFERENCES -->
+        <div class="pub-item">
+          <span class="pub-code">CNF1</span>
+          <div>
+            <div class="pub-title">3D Spiking Convolutional Networks for Robust Human Activity Recognition in AV Cabins</div>
+            <div class="pub-venue">IEEE IST 2025, Strasbourg</div>
+          </div>
+          <span class="pub-badge conf">Conference</span>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-code">CNF2</span>
+          <div>
+            <div class="pub-title">Navigation with Care: The ASPiDA Assistive Robot</div>
+            <div class="pub-venue">18th IEEE CNNA 2023</div>
+            <a class="pub-link" href="https://doi.org/10.1109/CNNA60945.2023.10652808" target="_blank">doi.org ↗</a>
+          </div>
+          <span class="pub-badge conf">Conference</span>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-code">CNF3</span>
+          <div>
+            <div class="pub-title">Spiking Neural Networks: Towards Bio-Inspired Multimodal Perception in Robotics</div>
+            <div class="pub-venue">ICRA@40 (40th Anniversary IEEE ICRA), 2024 · arXiv:2411.14147</div>
+          </div>
+          <span class="pub-badge conf">Conference</span>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-code">CNF4</span>
+          <div>
+            <div class="pub-title">A Bio-Inspired Elderly Action Recognition System for Ambient Assisted Living</div>
+            <div class="pub-venue">18th IEEE CNNA 2023</div>
+            <a class="pub-link" href="https://doi.org/10.1109/CNNA60945.2023.10652802" target="_blank">doi.org ↗</a>
+          </div>
+          <span class="pub-badge conf">Conference</span>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-code">CNF5</span>
+          <div>
+            <div class="pub-title">Semantic-Based Visual Vocabulary for Loop Closure Detection</div>
+            <div class="pub-venue">IEEE IST 2023</div>
+            <a class="pub-link" href="https://doi.org/10.1109/IST59124.2023.10355694" target="_blank">doi.org ↗</a>
+          </div>
+          <span class="pub-badge conf">Conference</span>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-code">CNF6</span>
+          <div>
+            <div class="pub-title">A Framework for Active Vision-Based Robot Planning using Spiking Neural Networks</div>
+            <div class="pub-venue">30th Mediterranean Conference on Control and Automation (MED), 2022</div>
+            <a class="pub-link" href="https://doi.org/10.1109/MED54222.2022.9837132" target="_blank">doi.org ↗</a>
+          </div>
+          <span class="pub-badge conf">Conference</span>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-code">CNF7</span>
+          <div>
+            <div class="pub-title">Joint-Aware Action Recognition for Ambient Assisted Living</div>
+            <div class="pub-venue">IEEE IST 2022</div>
+            <a class="pub-link" href="https://doi.org/10.1109/IST55454.2022.9827760" target="_blank">doi.org ↗</a>
+          </div>
+          <span class="pub-badge conf">Conference</span>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-code">CNF8</span>
+          <div>
+            <div class="pub-title">Improving Traversability Estimation through Autonomous Robot Experimentation</div>
+            <div class="pub-venue">ICVS 2019, Thessaloniki · Springer</div>
+            <a class="pub-link" href="https://doi.org/10.1007/978-3-030-34995-0_17" target="_blank">doi.org ↗</a>
+          </div>
+          <span class="pub-badge conf">Conference</span>
+        </div>
+
+        <!-- UNDER REVIEW -->
+        <div class="pub-item">
+          <span class="pub-code">S01</span>
+          <div>
+            <div class="pub-title">UAV Object Detection and Positioning in a Mining Industrial Metaverse with Custom Geo-Referenced Data</div>
+            <div class="pub-venue">IET Cyber-Physical Systems: Theory &amp; Applications</div>
+          </div>
+          <span class="pub-badge review">Under Review</span>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-code">S02</span>
+          <div>
+            <div class="pub-title">Reinforcement Learning with Spiking Neural Networks: A Survey</div>
+            <div class="pub-venue">IEEE Transactions on Artificial Intelligence</div>
+          </div>
+          <span class="pub-badge review">Under Review</span>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="card">
-      <h2>Affiliations</h2>
-      <ul>
-        <li>Democritus University of Thrace (DUTH), Xanthi — Laboratory of Robotics &amp; Automation</li>
-        <li>NCSR “Demokritos”, Athens — Institute of Informatics and Telecommunications</li>
-      </ul>
-      <p class="muted" style="margin-top:10px">
-        Postdoctoral Researcher, Democritus University of Thrace (2025–present)<br>
-        PhD in Robotics  &amp; AI, Democritus University of Thrace (2021–2025)
-      </p>
-    </section>
+  <!-- TEACHING -->
+  <section id="teaching">
+    <div class="reveal">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Teaching</h2>
+      </div>
+      <div class="teach-grid">
 
-    <section class="card">
-      <h2>Teaching</h2>
+        <div class="teach-card">
+          <span class="teach-year">Academic Year 2025 – 2026</span>
 
-      <p class="muted" style="margin-bottom:8px"><strong>Academic year 2025–2026</strong></p>
-      <ul>
-        <li><strong>Fall semester:</strong> Programming Languages (C) — Lab sessions, Harokopio University, Greece</li>
-        <li><strong>Spring semester:</strong> Computer Vision and Graph Theory — University of West Attica, Greece</li>
-      </ul>
+          <div class="teach-item">
+            <span class="teach-sem">Spring</span>
+            <div>
+              <div class="teach-info">Computer Vision &amp; Graph Theory</div>
+              <div class="teach-uni">Department of Computer &amp; Informatics Engineering · University of Western Attica (ΠΑΔΑ)</div>
+              <div class="teach-uni" style="color:var(--accent2); font-size:.73rem; margin-top:.2rem;">ESPA Academic Experience Fellowship</div>
+            </div>
+          </div>
 
-      <p class="muted" style="margin:16px 0 8px"><strong>During PhD program (co-taught)</strong></p>
-      <ul>
-      <li><strong>Fall 2022–2023:</strong> Control Systems — Democritus University of Thrace (DUTH), Greece</li>
-      <li><strong>Spring 2021–2022:</strong> Robotics — Democritus University of Thrace (DUTH), Greece</li>
-      <li><strong>Fall 2021–2022:</strong> Control Systems — Democritus University of Thrace (DUTH), Greece</li>
-      </ul>
-    </section>
+          <div class="teach-item">
+            <span class="teach-sem">Fall</span>
+            <div>
+              <div class="teach-info">Programming Languages (C) — Lab sessions</div>
+              <div class="teach-uni">Department of Informatics &amp; Telematics · Harokopio University of Athens</div>
+            </div>
+          </div>
+        </div>
 
-    <section class="card">
-      <h2>Publications</h2>
-      <p>
-        For the full list, see my <a href="https://scholar.google.com/citations?user=sT18y-cAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar profile</a>.
-      </p>
-      <!-- Optional: add 3–5 selected publications here -->
-    </section>
+        <div class="teach-card">
+          <span class="teach-year">During PhD (co-taught) · 2021 – 2023</span>
 
-    <section class="card">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Pharos</strong> —The Greek AI Factory (1 Jan 2026–present)</li>
-        <li><strong>Plasma-AI</strong> — AI modeling for plasma processes (1 Nov 2025–present)</li>
-        <li><strong>THESEUS</strong> — A Hub for Circularity Demonstrator (Attica & regions) (14 Jul 2025–present).</li>
-        <li><strong>DeployAI</strong> — European AI on-demand platform (1 Nov 2025–31 Dec 2025)</li>
-        <li><strong>MASTERMINE</strong> — European mining in the green & digital era (1 Dec 2023–30 Jun 2025)</li>
-        <li><strong> Autonomous UAV for navigation in inaccessible indoor spaces & human detection</strong> — (18 Sep 2023–29 Nov 2023)</li>
-        <li><strong>ASPiDA</strong> — Holistic system for improving quality of life for older adults (7 Jun 2021–30 Sep 2023)</li>
-        <li><strong>ExtremeEarth</strong> —Copernicus big data to Earth analytics (12 Jan 2021–11 Jul 2021)</li>
-        <li><strong>iRTA</strong> — Intelligent robotic high-precision treatment in rough-terrain vineyards (7 Jul 2020–31 Dec 2020)</li>
-        <li> <strong>  National Precision Medicine Network</strong>— (Siemens project) (10 Jun 2019–9 Sep 2019)</li>
-      </ul>
-    </section>
+          <div class="teach-item">
+            <span class="teach-sem">Fall '22</span>
+            <div>
+              <div class="teach-info">Control Systems</div>
+              <div class="teach-uni">Democritus University of Thrace</div>
+            </div>
+          </div>
 
-    <div class="footer">© <span id="y"></span> Katerina Oikonomou</div>
-  </main>
+          <div class="teach-item">
+            <span class="teach-sem">Spring '22</span>
+            <div>
+              <div class="teach-info">Robotics</div>
+              <div class="teach-uni">Democritus University of Thrace</div>
+            </div>
+          </div>
+
+          <div class="teach-item">
+            <span class="teach-sem">Fall '21</span>
+            <div>
+              <div class="teach-info">Control Systems &amp; Mechatronics</div>
+              <div class="teach-uni">Democritus University of Thrace</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="reveal">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>Research Projects</h2>
+      </div>
+      <div class="proj-grid">
+
+        <div class="proj-card">
+          <div class="proj-name">Pharos</div>
+          <div class="proj-desc">The Greek AI Factory — deploying specialised AI services across key sectors.</div>
+          <div class="proj-date">Jan 2026 – present · NCSR Demokritos</div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-name">Plasma-AI</div>
+          <div class="proj-desc">AI-based modeling and optimisation of plasma etching processes for semiconductor fabrication.</div>
+          <div class="proj-date">Nov 2025 – present · NCSR Demokritos</div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-name">THESEUS</div>
+          <div class="proj-desc">Circularity hub for Attica &amp; peripheral regions — autonomous platforms (AGVs, UAVs) for material flow optimisation.</div>
+          <div class="proj-date">Jul 2025 – present · DUTH</div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-name">DeployAI</div>
+          <div class="proj-desc">Development and deployment of the European AI on-demand platform — system architecture and implementation.</div>
+          <div class="proj-date">Nov – Dec 2025 · NCSR Demokritos</div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-name">MASTERMINE</div>
+          <div class="proj-desc">Semantic mapping for UAVs in mining environments; data-relay network via aerial robotic systems.</div>
+          <div class="proj-date">Dec 2023 – Jun 2025 · DUTH</div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-name">ASPiDA</div>
+          <div class="proj-desc">Holistic assistive robotics system for elderly quality of life — robot platform, fall detection, decision-making.</div>
+          <div class="proj-date">Jun 2021 – Sep 2023 · DUTH</div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-name">ExtremeEarth</div>
+          <div class="proj-desc">Copernicus big-data analytics for food security use cases — WP3/4 participation.</div>
+          <div class="proj-date">Jan – Jul 2021 · NCSR Demokritos</div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-name">iRTA</div>
+          <div class="proj-desc">Intelligent robotic high-precision treatment application in rough-terrain vineyards.</div>
+          <div class="proj-date">Jul – Dec 2020 · NCSR Demokritos</div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-name">Precision Medicine Network</div>
+          <div class="proj-desc">Biomedical data management and processing system (Siemens electrotechnical project).</div>
+          <div class="proj-date">Jun – Sep 2019 · NCSR Demokritos</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Katerina Maria Oikonomou &nbsp;·&nbsp;
+      <a href="mailto:k.m.oikonomou@gmail.com">k.m.oikonomou@gmail.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/koikonomou" target="_blank">GitHub</a>
+      &nbsp;·&nbsp;
+      <a href="https://scholar.google.com/citations?user=sT18y-cAAAAJ&hl=en" target="_blank">Google Scholar</a>
+    </p>
+  </footer>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => io.observe(el));
   </script>
+
 </body>
 </html>
