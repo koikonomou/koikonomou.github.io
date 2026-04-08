@@ -51,27 +51,38 @@
     /* ── HERO ── */
     #hero {
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      padding-top: 5rem;
+      display: flex; align-items: center;
+      padding: 5rem 8rem 5rem;
     }
 
     .hero-text {
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 6rem 5rem 6rem 8rem;
+      display: flex; flex-direction: column;
+      max-width: 660px;
       animation: fadeUp .9s ease both;
+    }
+
+    .hero-identity {
+      display: flex; align-items: center; gap: 1.4rem;
+      margin-bottom: 2rem;
+    }
+    .hero-avatar {
+      width: 68px; height: 68px; border-radius: 50%;
+      object-fit: cover; object-position: top center;
+      border: 2px solid var(--rule); flex-shrink: 0;
     }
     .hero-label {
       font-family: var(--sans); font-size: .72rem; letter-spacing: .2em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem;
+      text-transform: uppercase; color: var(--accent); margin-bottom: .35rem;
+    }
+    .hero-affil {
+      font-size: .82rem; color: var(--mid);
     }
     .hero-name {
-      font-family: var(--serif); font-size: clamp(2.8rem, 5vw, 4.6rem);
+      font-family: var(--serif); font-size: clamp(2.8rem, 5vw, 4.4rem);
       font-weight: 300; line-height: 1.1; margin-bottom: 1.8rem;
     }
-    .hero-name em { font-style: italic; color: var(--accent2); }
     .hero-tags {
-      display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2.2rem;
+      display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem;
     }
     .tag {
       font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
@@ -79,8 +90,20 @@
       padding: .3rem .85rem; border-radius: 2rem;
     }
     .hero-bio {
-      font-size: 1rem; color: var(--mid); max-width: 46ch; line-height: 1.8;
-      margin-bottom: 2.5rem;
+      font-size: 1rem; color: var(--mid); max-width: 52ch; line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-bottom: 2.5rem;
+      padding-bottom: 2rem; border-bottom: 1px solid var(--rule);
+    }
+    .stat-n {
+      font-family: var(--serif); font-size: 1.9rem; font-weight: 300;
+      color: var(--accent); display: block; line-height: 1;
+    }
+    .stat-l {
+      font-size: .65rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--mid); display: block; margin-top: .3rem;
     }
     .hero-links { display: flex; gap: 1.2rem; flex-wrap: wrap; }
     .btn {
@@ -89,47 +112,10 @@
       text-decoration: none; padding: .65rem 1.4rem; border-radius: 2rem;
       transition: all .2s;
     }
-    .btn-primary {
-      background: var(--accent); color: #fff;
-    }
+    .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: #2d5a72; }
-    .btn-ghost {
-      border: 1px solid var(--rule); color: var(--mid);
-    }
+    .btn-ghost { border: 1px solid var(--rule); color: var(--mid); }
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-
-    .hero-image {
-      position: relative; overflow: hidden;
-      animation: fadeIn 1.2s ease both;
-    }
-    .hero-image::before {
-      content: '';
-      position: absolute; inset: 3rem 3rem 0 3rem;
-      border: 1px solid var(--rule); border-radius: 2px; z-index: 0;
-    }
-    .hero-image img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; object-fit: cover;
-      object-position: top center;
-      clip-path: inset(3rem 3rem 0 5rem);
-    }
-    .hero-image .stat-card {
-      position: absolute; bottom: 4rem; left: 1rem; z-index: 10;
-      display: flex; gap: 1rem;
-    }
-    .stat {
-      background: var(--cream); border: 1px solid var(--rule);
-      padding: .9rem 1.2rem; border-radius: 4px; text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,.06);
-    }
-    .stat-n {
-      font-family: var(--serif); font-size: 2rem; font-weight: 300;
-      color: var(--accent); display: block; line-height: 1;
-    }
-    .stat-l {
-      font-size: .65rem; letter-spacing: .1em; text-transform: uppercase;
-      color: var(--mid); display: block; margin-top: .3rem;
-    }
 
     /* ── SECTIONS ── */
     section { padding: 6rem 8rem; border-top: 1px solid var(--rule); }
@@ -265,10 +251,8 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      #hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-text { padding: 7rem 2rem 3rem; }
-      .hero-image { height: 55vw; min-height: 300px; }
-      .hero-image img { clip-path: inset(2rem 2rem 0 2rem); }
+      #hero { padding: 7rem 2rem 4rem; }
+      .hero-text { max-width: 100%; }
       section { padding: 4rem 2rem; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .teach-grid { grid-template-columns: 1fr; }
@@ -295,7 +279,13 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-text">
-      <span class="hero-label">Postdoctoral Researcher · AI &amp; Robotics</span>
+      <div class="hero-identity">
+        <img class="hero-avatar" src="photo.jpg" alt="Katerina Maria Oikonomou" />
+        <div>
+          <div class="hero-label">Postdoctoral Researcher · AI &amp; Robotics</div>
+          <div class="hero-affil">DUTH &amp; NCSR "Demokritos"</div>
+        </div>
+      </div>
       <h1 class="hero-name">
         Katerina<br>
         Maria<br>
@@ -312,31 +302,16 @@
         bridging spiking neural networks, computer vision, and robotics to create
         efficient, intelligent machines.
       </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-n">143</span><span class="stat-l">Citations</span></div>
+        <div class="stat"><span class="stat-n">6</span><span class="stat-l">h-index</span></div>
+        <div class="stat"><span class="stat-n">15</span><span class="stat-l">Papers</span></div>
+      </div>
       <div class="hero-links">
-        <a class="btn btn-primary" href="https://scholar.google.com/citations?user=sT18y-cAAAAJ&hl=en" target="_blank">
-          ↗ Google Scholar
-        </a>
+        <a class="btn btn-primary" href="https://scholar.google.com/citations?user=sT18y-cAAAAJ&hl=en" target="_blank">↗ Google Scholar</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/katerina-maria-oikonomou-0b2b3716a/" target="_blank">LinkedIn</a>
         <a class="btn btn-ghost" href="https://github.com/koikonomou" target="_blank">GitHub</a>
         <a class="btn btn-ghost" href="https://robotics.pme.duth.gr/koikonomou/" target="_blank">Lab Page</a>
-      </div>
-    </div>
-
-    <div class="hero-image">
-      <img src="photo.jpg" alt="Dr. Katerina Maria Oikonomou" />
-      <div class="stat-card">
-        <div class="stat">
-          <span class="stat-n">143</span>
-          <span class="stat-l">Citations</span>
-        </div>
-        <div class="stat">
-          <span class="stat-n">6</span>
-          <span class="stat-l">h-index</span>
-        </div>
-        <div class="stat">
-          <span class="stat-n">15</span>
-          <span class="stat-l">Papers</span>
-        </div>
       </div>
     </div>
   </section>
@@ -391,148 +366,40 @@
         <h2>Publications</h2>
       </div>
 
-      <div class="pub-list">
-
-        <!-- JOURNALS -->
-        <div class="pub-item">
-          <span class="pub-code">JRN1</span>
-          <div>
-            <div class="pub-title">Spiking Neural Network Feature Discrimination Boosts Modality Fusion</div>
-            <div class="pub-venue">IEEE Transactions on Cognitive and Developmental Systems · IF 4.9</div>
-            <a class="pub-link" href="https://ieeexplore.ieee.org/document/11297437" target="_blank">ieeexplore.ieee.org ↗</a>
-          </div>
-          <span class="pub-badge q1">Q1</span>
+      <div id="pub-list" class="pub-list">
+        <div id="pub-loading" style="color:var(--mid); font-size:.9rem; padding:2rem 0;">
+          Loading publications…
         </div>
-
-        <div class="pub-item">
-          <span class="pub-code">JRN2</span>
-          <div>
-            <div class="pub-title">A Hybrid Reinforcement Learning Approach with a Spiking Actor Network for Efficient Robotic Arm Target Reaching</div>
-            <div class="pub-venue">IEEE Robotics and Automation Letters · IF 5.6</div>
-            <a class="pub-link" href="https://doi.org/10.1109/LRA.2023.3264836" target="_blank">doi.org/10.1109/LRA ↗</a>
-          </div>
-          <span class="pub-badge q1">Q1</span>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-code">JRN3</span>
-          <div>
-            <div class="pub-title">A Survey on Technical Challenges of Assistive Robotics for Elder People in Domestic Environments: The ASPiDA Concept</div>
-            <div class="pub-venue">IEEE Transactions on Medical Robotics and Bionics · IF 3.4</div>
-            <a class="pub-link" href="https://doi.org/10.1109/TMRB.2023.3261342" target="_blank">doi.org/10.1109/TMRB ↗</a>
-          </div>
-          <span class="pub-badge q1">Q1</span>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-code">JRN4</span>
-          <div>
-            <div class="pub-title">A Hybrid Spiking Neural Network Reinforcement Learning Agent for Energy-Efficient Object Manipulation</div>
-            <div class="pub-venue">Machines, 11(2), 162 · IF 2.5</div>
-            <a class="pub-link" href="https://doi.org/10.3390/machines11020162" target="_blank">doi.org/10.3390 ↗</a>
-          </div>
-          <span class="pub-badge q2">Q2</span>
-        </div>
-
-        <!-- CONFERENCES -->
-        <div class="pub-item">
-          <span class="pub-code">CNF1</span>
-          <div>
-            <div class="pub-title">3D Spiking Convolutional Networks for Robust Human Activity Recognition in AV Cabins</div>
-            <div class="pub-venue">IEEE IST 2025, Strasbourg</div>
-          </div>
-          <span class="pub-badge conf">Conference</span>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-code">CNF2</span>
-          <div>
-            <div class="pub-title">Navigation with Care: The ASPiDA Assistive Robot</div>
-            <div class="pub-venue">18th IEEE CNNA 2023</div>
-            <a class="pub-link" href="https://doi.org/10.1109/CNNA60945.2023.10652808" target="_blank">doi.org ↗</a>
-          </div>
-          <span class="pub-badge conf">Conference</span>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-code">CNF3</span>
-          <div>
-            <div class="pub-title">Spiking Neural Networks: Towards Bio-Inspired Multimodal Perception in Robotics</div>
-            <div class="pub-venue">ICRA@40 (40th Anniversary IEEE ICRA), 2024 · arXiv:2411.14147</div>
-          </div>
-          <span class="pub-badge conf">Conference</span>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-code">CNF4</span>
-          <div>
-            <div class="pub-title">A Bio-Inspired Elderly Action Recognition System for Ambient Assisted Living</div>
-            <div class="pub-venue">18th IEEE CNNA 2023</div>
-            <a class="pub-link" href="https://doi.org/10.1109/CNNA60945.2023.10652802" target="_blank">doi.org ↗</a>
-          </div>
-          <span class="pub-badge conf">Conference</span>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-code">CNF5</span>
-          <div>
-            <div class="pub-title">Semantic-Based Visual Vocabulary for Loop Closure Detection</div>
-            <div class="pub-venue">IEEE IST 2023</div>
-            <a class="pub-link" href="https://doi.org/10.1109/IST59124.2023.10355694" target="_blank">doi.org ↗</a>
-          </div>
-          <span class="pub-badge conf">Conference</span>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-code">CNF6</span>
-          <div>
-            <div class="pub-title">A Framework for Active Vision-Based Robot Planning using Spiking Neural Networks</div>
-            <div class="pub-venue">30th Mediterranean Conference on Control and Automation (MED), 2022</div>
-            <a class="pub-link" href="https://doi.org/10.1109/MED54222.2022.9837132" target="_blank">doi.org ↗</a>
-          </div>
-          <span class="pub-badge conf">Conference</span>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-code">CNF7</span>
-          <div>
-            <div class="pub-title">Joint-Aware Action Recognition for Ambient Assisted Living</div>
-            <div class="pub-venue">IEEE IST 2022</div>
-            <a class="pub-link" href="https://doi.org/10.1109/IST55454.2022.9827760" target="_blank">doi.org ↗</a>
-          </div>
-          <span class="pub-badge conf">Conference</span>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-code">CNF8</span>
-          <div>
-            <div class="pub-title">Improving Traversability Estimation through Autonomous Robot Experimentation</div>
-            <div class="pub-venue">ICVS 2019, Thessaloniki · Springer</div>
-            <a class="pub-link" href="https://doi.org/10.1007/978-3-030-34995-0_17" target="_blank">doi.org ↗</a>
-          </div>
-          <span class="pub-badge conf">Conference</span>
-        </div>
-
-        <!-- UNDER REVIEW -->
-        <div class="pub-item">
-          <span class="pub-code">S01</span>
-          <div>
-            <div class="pub-title">UAV Object Detection and Positioning in a Mining Industrial Metaverse with Custom Geo-Referenced Data</div>
-            <div class="pub-venue">IET Cyber-Physical Systems: Theory &amp; Applications</div>
-          </div>
-          <span class="pub-badge review">Under Review</span>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-code">S02</span>
-          <div>
-            <div class="pub-title">Reinforcement Learning with Spiking Neural Networks: A Survey</div>
-            <div class="pub-venue">IEEE Transactions on Artificial Intelligence</div>
-          </div>
-          <span class="pub-badge review">Under Review</span>
-        </div>
-
       </div>
+
+      <!-- Under review: kept static since not yet indexed -->
+      <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid var(--rule);">
+        <div style="font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; color:var(--accent2); margin-bottom:1.2rem;">Under Review</div>
+        <div class="pub-list">
+          <div class="pub-item">
+            <span class="pub-code">S01</span>
+            <div>
+              <div class="pub-title">UAV Object Detection and Positioning in a Mining Industrial Metaverse with Custom Geo-Referenced Data</div>
+              <div class="pub-venue">IET Cyber-Physical Systems: Theory &amp; Applications</div>
+            </div>
+            <span class="pub-badge review">Under Review</span>
+          </div>
+          <div class="pub-item">
+            <span class="pub-code">S02</span>
+            <div>
+              <div class="pub-title">Reinforcement Learning with Spiking Neural Networks: A Survey</div>
+              <div class="pub-venue">IEEE Transactions on Artificial Intelligence</div>
+            </div>
+            <span class="pub-badge review">Under Review</span>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:2rem; font-size:.75rem; color:var(--mid);">
+        Publication list auto-fetched from
+        <a href="https://openalex.org/authors/a5041627686" target="_blank" style="color:var(--accent);">OpenAlex</a>
+        · updated on page load.
+      </p>
     </div>
   </section>
 
@@ -683,6 +550,67 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
     }, { threshold: 0.08 });
     reveals.forEach(el => io.observe(el));
+
+    // ── OpenAlex live publications ──
+    const AUTHOR_ID = 'a5041627686';
+    const API = `https://api.openalex.org/works?filter=authorships.author.id:${AUTHOR_ID}&per_page=50&sort=publication_year:desc&select=title,publication_year,type,doi,primary_location,biblio`;
+
+    function typeBadge(type) {
+      if (type === 'journal-article') return '<span class="pub-badge q1">Journal</span>';
+      if (type === 'proceedings-article') return '<span class="pub-badge conf">Conference</span>';
+      if (type === 'dissertation') return '<span class="pub-badge q2">Thesis</span>';
+      return `<span class="pub-badge review">${type ?? 'Other'}</span>`;
+    }
+
+    async function loadPubs() {
+      const list = document.getElementById('pub-list');
+      const loading = document.getElementById('pub-loading');
+      try {
+        const res = await fetch(API);
+        if (!res.ok) throw new Error('API error');
+        const data = await res.json();
+        const works = data.results;
+
+        if (!works || works.length === 0) {
+          loading.textContent = 'No publications found.';
+          return;
+        }
+
+        loading.remove();
+
+        works.forEach(w => {
+          const title   = w.title ?? 'Untitled';
+          const year    = w.publication_year ?? '';
+          const doi     = w.doi ?? null;
+          const loc     = w.primary_location ?? {};
+          const src     = loc.source ?? {};
+          const venue   = src.display_name ?? '';
+          const vol     = w.biblio?.volume ? `Vol. ${w.biblio.volume}` : '';
+          const venueStr = [venue, vol].filter(Boolean).join(' · ');
+          const doiUrl  = doi ? `https://doi.org/${doi.replace('https://doi.org/', '')}` : null;
+          const doiHost = doiUrl ? new URL(doiUrl).host : null;
+
+          const item = document.createElement('div');
+          item.className = 'pub-item';
+          item.innerHTML = `
+            <span class="pub-code" style="font-family:var(--serif);font-style:italic;font-size:.85rem;color:var(--accent2);min-width:3.5rem;">${year}</span>
+            <div>
+              <div class="pub-title">${title}</div>
+              ${venueStr ? `<div class="pub-venue">${venueStr}</div>` : ''}
+              ${doiUrl ? `<a class="pub-link" href="${doiUrl}" target="_blank">${doiHost} ↗</a>` : ''}
+            </div>
+            ${typeBadge(w.type)}
+          `;
+          list.appendChild(item);
+        });
+
+      } catch (err) {
+        loading.textContent = 'Could not load publications — please visit my Google Scholar profile.';
+        console.error(err);
+      }
+    }
+
+    loadPubs();
   </script>
 
 </body>
