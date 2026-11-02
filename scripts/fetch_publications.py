@@ -79,11 +79,28 @@ for w in results:
     else:
         old["citations"] = max(p["citations"], old["citations"])
 
+# Author-level totals, so the stats match the OpenAlex profile exactly.
+stats = None
+try:
+    a_params = {"select": "works_count,cited_by_count,summary_stats"}
+    if key:
+        a_params["api_key"] = key
+    a_url = f"https://api.openalex.org/authors/{AUTHOR_ID.upper()}?" + urllib.parse.urlencode(a_params)
+    with urllib.request.urlopen(urllib.request.Request(a_url, headers=req.headers), timeout=60) as r:
+        a = json.load(r)
+    stats = {
+        "works": a.get("works_count"),
+        "citations": a.get("cited_by_count"),
+        "h_index": (a.get("summary_stats") or {}).get("h_index"),
+    }
+except Exception as e:  # stats are optional; keep the publication list update
+    print(f"Could not fetch author stats: {e}")
+
 out = sorted(pubs.values(), key=lambda p: (p["date"] or ""), reverse=True)
 if not out:
     sys.exit("OpenAlex returned no publications; keeping the existing file.")
 
 with open(OUT, "w", encoding="utf-8") as f:
-    json.dump({"source": f"https://openalex.org/authors/{AUTHOR_ID}", "works": out}, f, ensure_ascii=False, indent=1)
+    json.dump({"source": f"https://openalex.org/authors/{AUTHOR_ID}", "stats": stats, "works": out}, f, ensure_ascii=False, indent=1)
     f.write("\n")
 print(f"Wrote {len(out)} publications")

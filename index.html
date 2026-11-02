@@ -739,12 +739,19 @@
         return item;
       }
 
+      // Prefer OpenAlex's own author totals (saved by the daily sync) so the numbers
+      // match the OpenAlex profile; otherwise compute them from the list.
+      let authorStats = null;
       function showStats(works) {
         const cites = works.map(p => p.citations || 0).sort((a, b) => b - a);
-        const h = cites.filter((c, i) => c >= i + 1).length;
-        const total = cites.reduce((a, b) => a + b, 0);
+        let h = cites.filter((c, i) => c >= i + 1).length;
+        let total = cites.reduce((a, b) => a + b, 0);
+        let count = works.length;
+        if (authorStats?.citations) {
+          total = authorStats.citations; count = authorStats.works ?? count; h = authorStats.h_index ?? h;
+        }
         if (!total) return;
-        document.getElementById('stat-pubs').textContent = works.length;
+        document.getElementById('stat-pubs').textContent = count;
         document.getElementById('stat-cites').textContent = total;
         document.getElementById('stat-h').textContent = h;
         document.getElementById('stats').hidden = false;
@@ -754,7 +761,7 @@
       async function getPubs() {
         try {
           const r = await fetch('publications.json', { cache: 'no-cache' });
-          if (r.ok) { const d = await r.json(); if (d.works?.length) return d.works; }
+          if (r.ok) { const d = await r.json(); authorStats = d.stats ?? null; if (d.works?.length) return d.works; }
         } catch (_) {}
         const r = await fetch(API);
         if (!r.ok) throw new Error('API error');
