@@ -1,27 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- binocular eyes -->
-  <g transform="rotate(-6 32 14)">
-    <rect x="9" y="4" width="21" height="17" rx="7" fill="#8a9aa3"/>
-    <rect x="34" y="4" width="21" height="17" rx="7" fill="#8a9aa3"/>
-    <rect x="28" y="10" width="8" height="5" fill="#5f6f78"/>
-    <circle cx="19.5" cy="12.5" r="6" fill="#1a1714"/>
-    <circle cx="44.5" cy="12.5" r="6" fill="#1a1714"/>
-    <circle cx="21" cy="10.5" r="2.2" fill="#f7f4ef"/>
-    <circle cx="46" cy="10.5" r="2.2" fill="#f7f4ef"/>
+  <!-- binocular eyes: teardrop lenses tilted outward -->
+  <rect x="29" y="12" width="6" height="16" fill="#6b7378"/>
+  <g transform="rotate(-14 19 12)">
+    <path d="M7 6 Q7 2 12 2 L27 3 Q31 3 31 8 L30 17 Q29 22 22 22 L13 22 Q7 22 7 15 Z" fill="#9aa3a8" stroke="#4f575c" stroke-width="1.5"/>
+    <circle cx="19" cy="12.5" r="7" fill="#1a1714"/>
+    <circle cx="19" cy="12.5" r="3.2" fill="#3d6b84"/>
+    <circle cx="21" cy="10.5" r="1.6" fill="#f7f4ef"/>
   </g>
-  <!-- neck -->
-  <rect x="29" y="20" width="6" height="8" fill="#5f6f78"/>
-  <!-- boxy body -->
-  <rect x="13" y="27" width="38" height="25" rx="3" fill="#d9a441"/>
-  <rect x="13" y="27" width="38" height="5" rx="2" fill="#b8956a"/>
-  <rect x="19" y="36" width="12" height="9" rx="1.5" fill="#3d6b84"/>
-  <circle cx="42" cy="40" r="3.2" fill="#a14b3a"/>
+  <g transform="rotate(14 45 12)">
+    <path d="M57 6 Q57 2 52 2 L37 3 Q33 3 33 8 L34 17 Q35 22 42 22 L51 22 Q57 22 57 15 Z" fill="#9aa3a8" stroke="#4f575c" stroke-width="1.5"/>
+    <circle cx="45" cy="12.5" r="7" fill="#1a1714"/>
+    <circle cx="45" cy="12.5" r="3.2" fill="#3d6b84"/>
+    <circle cx="47" cy="10.5" r="1.6" fill="#f7f4ef"/>
+  </g>
+  <!-- rusty yellow cube body -->
+  <rect x="15" y="27" width="34" height="24" fill="#d9a032" stroke="#8a5a1c" stroke-width="1.5"/>
+  <rect x="15" y="27" width="34" height="4" fill="#b67a2a"/>
+  <rect x="19" y="34" width="14" height="6" fill="#4f575c"/>
+  <rect x="20.5" y="35.5" width="5" height="3" fill="#e2c35a"/>
+  <circle cx="41" cy="37" r="2.6" fill="#b5442e"/>
+  <rect x="19" y="43" width="26" height="1.6" fill="#8a5a1c"/>
   <!-- arms -->
-  <rect x="5" y="34" width="9" height="5" rx="2" fill="#8a9aa3"/>
-  <rect x="50" y="34" width="9" height="5" rx="2" fill="#8a9aa3"/>
-  <!-- treads -->
-  <rect x="5" y="50" width="22" height="12" rx="6" fill="#3a3530"/>
-  <rect x="37" y="50" width="22" height="12" rx="6" fill="#3a3530"/>
-  <circle cx="11" cy="56" r="2.5" fill="#8a9aa3"/><circle cx="21" cy="56" r="2.5" fill="#8a9aa3"/>
-  <circle cx="43" cy="56" r="2.5" fill="#8a9aa3"/><circle cx="53" cy="56" r="2.5" fill="#8a9aa3"/>
+  <rect x="7" y="35" width="9" height="5" fill="#6b7378"/>
+  <rect x="48" y="35" width="9" height="5" fill="#6b7378"/>
+  <!-- triangular treads -->
+  <path d="M3 62 L12 47 L24 47 L29 62 Z" fill="#2f2b27"/>
+  <path d="M35 62 L40 47 L52 47 L61 62 Z" fill="#2f2b27"/>
+  <circle cx="16" cy="56" r="3" fill="#6b7378"/>
+  <circle cx="48" cy="56" r="3" fill="#6b7378"/>
 </svg>
