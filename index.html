@@ -238,7 +238,7 @@
     .pub-more:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ── TEACHING ── */
-    .teach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .teach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start; }
     .teach-card {
       padding: 1.8rem 2rem; border: 1px solid var(--rule); border-radius: 4px;
       background: var(--cream);
@@ -475,6 +475,20 @@
         <h2>Teaching</h2>
       </div>
       <div class="teach-grid">
+
+        <div class="teach-card">
+          <span class="teach-year">Academic Year 2026 – 2027 · Current</span>
+
+          <div class="teach-item">
+            <span class="teach-sem">Winter</span>
+            <div>
+              <div class="teach-info">Robotics</div>
+              <div class="teach-info">Artificial Intelligence</div>
+              <div class="teach-uni">Department of Product &amp; Systems Design Engineering · University of the Aegean</div>
+              <div class="teach-uni" style="color:var(--accent2); font-size:.73rem; margin-top:.2rem;">ESPA Academic Experience Fellowship</div>
+            </div>
+          </div>
+        </div>
 
         <div class="teach-card">
           <span class="teach-year">Academic Year 2025 – 2026</span>
