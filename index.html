@@ -25,6 +25,7 @@
     "image": "https://koikonomou.github.io/photo-square.jpg",
     "email": "mailto:k.m.oikonomou@pm.me",
     "affiliation": [
+      { "@type": "CollegeOrUniversity", "name": "University of the Aegean" },
       { "@type": "CollegeOrUniversity", "name": "Democritus University of Thrace" },
       { "@type": "ResearchOrganization", "name": "NCSR Demokritos" }
     ],
@@ -34,8 +35,10 @@
       "https://scholar.google.com/citations?user=sT18y-cAAAAJ",
       "https://www.linkedin.com/in/katerina-maria-oikonomou-0b2b3716a/",
       "https://github.com/koikonomou",
-      "https://openalex.org/authors/a5041627686"
-    ]
+      "https://openalex.org/authors/a5041627686",
+      "https://orcid.org/0000-0001-7537-7310"
+    ],
+    "identifier": { "@type": "PropertyValue", "propertyID": "ORCID", "value": "0000-0001-7537-7310" }
   }
   </script>
   <script>document.documentElement.classList.add('js');</script>
@@ -153,6 +156,38 @@
       object-position: center;
       border-radius: 50%;
     }
+
+    /* ── STATS ── */
+    .hero-image { flex-direction: column; gap: 2rem; }
+    .stats { display: flex; gap: .8rem; }
+    .stats[hidden] { display: none; }
+    .stat {
+      min-width: 6.5rem; padding: .9rem 1.1rem; text-align: center;
+      background: var(--cream); border: 1px solid var(--rule); border-radius: 4px;
+    }
+    .stat-n {
+      display: block; font-family: var(--serif); font-size: 2rem; font-weight: 300;
+      line-height: 1; color: var(--accent);
+    }
+    .stat-l {
+      display: block; margin-top: .35rem; font-size: .64rem; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--mid);
+    }
+    .stats-src { font-size: .68rem; color: var(--mid); margin-top: -1.3rem; }
+    .stats-src a { color: inherit; }
+
+    /* ── NEWS ── */
+    .news-list { list-style: none; max-width: 52rem; }
+    .news-list li {
+      display: grid; grid-template-columns: 7rem 1fr; gap: 1.5rem;
+      padding: 1rem 0; border-bottom: 1px solid var(--rule);
+      font-size: .93rem; color: var(--ink); line-height: 1.6;
+    }
+    .news-list li:last-child { border-bottom: none; }
+    .news-date {
+      font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--accent2);
+    }
+    .news-list em { color: var(--mid); }
 
     /* ── SECTIONS ── */
     section { padding: 6rem 8rem; border-top: 1px solid var(--rule); }
@@ -314,6 +349,12 @@
       #hero { grid-template-columns: 1fr; min-height: auto; }
       #hero { padding-top: 4.5rem; }
       .hero-image { order: -1; padding: 2.5rem 1.5rem 0; justify-content: flex-start; }
+      .hero-image { align-items: flex-start; gap: 1.5rem; }
+      .stats-src { margin-top: -1rem; }
+      .stat { min-width: 0; flex: 1; padding: .7rem .6rem; }
+      .stat-n { font-size: 1.6rem; }
+      .stat-l { letter-spacing: .04em; font-size: .6rem; }
+      .news-list li { grid-template-columns: 1fr; gap: .1rem; }
       .hero-image img { width: 200px; box-shadow: 0 0 0 6px var(--cream), 0 0 0 7px var(--rule); }
       .hero-text { padding: 2rem 1.5rem 4rem; }
       section { padding: 4rem 1.5rem; }
@@ -342,6 +383,7 @@
   <nav aria-label="Main">
     <a class="brand" href="#hero">K. M. Oikonomou</a>
     <a href="#about">About</a>
+    <a href="#news">News</a>
     <a href="#publications">Publications</a>
     <a href="#teaching">Teaching</a>
     <a href="#projects">Projects</a>
@@ -372,6 +414,7 @@
         <a class="btn btn-primary" href="https://scholar.google.com/citations?user=sT18y-cAAAAJ&hl=en" target="_blank" rel="noopener">
           ↗ Google Scholar
         </a>
+        <a class="btn btn-ghost" href="https://orcid.org/0000-0001-7537-7310" target="_blank" rel="noopener">ORCID</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/katerina-maria-oikonomou-0b2b3716a/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn btn-ghost" href="https://github.com/koikonomou" target="_blank" rel="noopener">GitHub</a>
         <a class="btn btn-ghost" href="https://robotics.pme.duth.gr" target="_blank" rel="noopener">DUTh Lab Page</a>
@@ -380,6 +423,12 @@
 
     <div class="hero-image">
       <img src="photo-square.jpg" alt="Portrait of Katerina Maria Oikonomou" width="440" height="440" />
+      <div class="stats" id="stats" hidden>
+        <div class="stat"><span class="stat-n" id="stat-pubs">–</span><span class="stat-l">Publications</span></div>
+        <div class="stat"><span class="stat-n" id="stat-cites">–</span><span class="stat-l">Citations</span></div>
+        <div class="stat"><span class="stat-n" id="stat-h">–</span><span class="stat-l">h-index</span></div>
+      </div>
+      <div class="stats-src" id="stats-src" hidden>Source: <a href="https://openalex.org/authors/a5041627686" target="_blank" rel="noopener">OpenAlex</a>, updated daily</div>
     </div>
   </section>
 
@@ -396,6 +445,9 @@
             I am a Postdoctoral Researcher at the <strong>Democritus University of Thrace (DUTH)</strong>,
             Department of Production and Management Engineering, and a research associate
             at <strong>NCSR "Demokritos"</strong>, Institute of Informatics and Telecommunications, Athens.
+            In the 2026–2027 academic year I am also teaching Robotics and Artificial Intelligence at the
+            <strong>University of the Aegean</strong>, Department of Product &amp; Systems Design Engineering,
+            as an ESPA Academic Experience Fellow.
           </p>
           <p>
             My research sits at the intersection of artificial intelligence, computational neuroscience,
@@ -425,11 +477,30 @@
     </div>
   </section>
 
+  <!-- NEWS -->
+  <section id="news">
+    <div class="reveal">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>News</h2>
+      </div>
+      <ul class="news-list">
+        <li><span class="news-date">Autumn 2026</span><span>Teaching <strong>Robotics</strong> and <strong>Artificial Intelligence</strong> at the University of the Aegean, Department of Product &amp; Systems Design Engineering (ESPA Academic Experience Fellowship).</span></li>
+        <li><span class="news-date">Sep 2026</span><span>New preprint on DeepONet-based surrogate modelling of an inductively coupled plasma reactor (Plasma-AI).</span></li>
+        <li><span class="news-date">Jul 2026</span><span>New preprint on arXiv: visual place recognition using rate-encoded spiking neural networks.</span></li>
+        <li><span class="news-date">Jun 2026</span><span>Paper on plasma-etching efficiency via physics-based modelling and machine learning published in <em>Systems and Control Transactions</em>.</span></li>
+        <li><span class="news-date">Jan 2026</span><span>Joined <strong>Pharos</strong>, the Greek AI Factory, at NCSR Demokritos. Our UAV detection paper appeared in <em>IET Cyber-Physical Systems</em>.</span></li>
+        <li><span class="news-date">Dec 2025</span><span>Paper on spiking feature discrimination for modality fusion published in <em>IEEE Transactions on Cognitive and Developmental Systems</em>.</span></li>
+        <li><span class="news-date">2025</span><span>Completed my <strong>PhD</strong> at Democritus University of Thrace on spiking neural networks for perception and control in assistive robotics.</span></li>
+      </ul>
+    </div>
+  </section>
+
   <!-- PUBLICATIONS -->
   <section id="publications">
     <div class="reveal">
       <div class="section-header">
-        <span class="section-num">02</span>
+        <span class="section-num">03</span>
         <h2>Publications</h2>
       </div>
 
@@ -465,7 +536,7 @@
   <section id="teaching">
     <div class="reveal">
       <div class="section-header">
-        <span class="section-num">03</span>
+        <span class="section-num">04</span>
         <h2>Teaching</h2>
       </div>
       <div class="teach-grid">
@@ -541,7 +612,7 @@
   <section id="projects">
     <div class="reveal">
       <div class="section-header">
-        <span class="section-num">04</span>
+        <span class="section-num">05</span>
         <h2>Research Projects</h2>
       </div>
       <div class="proj-grid">
@@ -619,6 +690,8 @@
       <a href="https://github.com/koikonomou" target="_blank" rel="noopener">GitHub</a>
       &nbsp;·&nbsp;
       <a href="https://scholar.google.com/citations?user=sT18y-cAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      &nbsp;·&nbsp;
+      <a href="https://orcid.org/0000-0001-7537-7310" target="_blank" rel="noopener">ORCID</a>
     </p>
   </footer>
   
@@ -700,6 +773,18 @@
         return item;
       }
 
+      function showStats(works) {
+        const cites = works.map(p => p.citations || 0).sort((a, b) => b - a);
+        const h = cites.filter((c, i) => c >= i + 1).length;
+        const total = cites.reduce((a, b) => a + b, 0);
+        if (!total) return;
+        document.getElementById('stat-pubs').textContent = works.length;
+        document.getElementById('stat-cites').textContent = total;
+        document.getElementById('stat-h').textContent = h;
+        document.getElementById('stats').hidden = false;
+        document.getElementById('stats-src').hidden = false;
+      }
+
       async function getPubs() {
         try {
           const r = await fetch('publications.json', { cache: 'no-cache' });
@@ -720,6 +805,7 @@
           const works = (await getPubs()).filter(p => !(p.kind === 'preprint' && pending.has(norm(p.title))));
           if (!works.length) { loading.textContent = 'No publications found.'; return; }
           loading.remove();
+          showStats(works);
           works.forEach((p, i) => list.appendChild(renderPub(p, i)));
           if (works.length > SHOW) {
             const btn = document.createElement('button');
