@@ -439,20 +439,14 @@
 
       <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid var(--rule);">
         <div style="font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; color:var(--accent2); margin-bottom:1.2rem;">Under Review</div>
-        <div class="pub-list">
+        <div class="pub-list" id="under-review">
           <div class="pub-item">
             <span class="pub-code">S01</span>
             <div>
-              <div class="pub-title">UAV Object Detection and Positioning in a Mining Industrial Metaverse with Custom Geo-Referenced Data</div>
-              <div class="pub-venue">IET Cyber-Physical Systems: Theory &amp; Applications</div>
-            </div>
-            <span class="pub-badge review">Under Review</span>
-          </div>
-          <div class="pub-item">
-            <span class="pub-code">S02</span>
-            <div>
-              <div class="pub-title">Reinforcement Learning with Spiking Neural Networks: A Survey</div>
+              <div class="pub-title">Reinforcement Learning with Spiking Neural Networks for Robotic Applications: A Survey</div>
+              <div class="pub-authors"><strong>Katerina Maria Oikonomou</strong>, Ioannis Kansizoglou, Antonios C. Gasteratos</div>
               <div class="pub-venue">IEEE Transactions on Artificial Intelligence</div>
+              <a class="pub-link" href="https://doi.org/10.36227/techrxiv.175037299.95344486/v1" target="_blank" rel="noopener">Preprint on TechRxiv ↗</a>
             </div>
             <span class="pub-badge review">Under Review</span>
           </div>
@@ -719,7 +713,10 @@
         const list    = document.getElementById('pub-list');
         const loading = document.getElementById('pub-loading');
         try {
-          const works = await getPubs();
+          // Hide preprints already listed under "Under Review" so they don't appear twice.
+          const norm = t => t.toLowerCase().replace(/[^a-z0-9]/g, '');
+          const pending = new Set([...document.querySelectorAll('#under-review .pub-title')].map(e => norm(e.textContent)));
+          const works = (await getPubs()).filter(p => !(p.kind === 'preprint' && pending.has(norm(p.title))));
           if (!works.length) { loading.textContent = 'No publications found.'; return; }
           loading.remove();
           works.forEach((p, i) => list.appendChild(renderPub(p, i)));
