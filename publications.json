@@ -1,0 +1,331 @@
+{
+ "source": "https://openalex.org/authors/a5041627686",
+ "works": [
+  {
+   "title": "DeepONet-Based Surrogate Modeling of an Inductively Coupled Plasma Reactor for Low Pressure Oxygen Plasma Etching Process",
+   "year": 2026,
+   "date": "2026-09-23",
+   "kind": "preprint",
+   "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+   "volume": "",
+   "authors": [
+    "Eneri Boniakou",
+    "Katerina Maria Oikonomou",
+    "Sotiris Mouchtouris",
+    "Vassilios Constantoudis",
+    "George Kokkoris"
+   ],
+   "url": "https://doi.org/10.5281/zenodo.22918559",
+   "doi": "10.5281/zenodo.22918559",
+   "citations": 0
+  },
+  {
+   "title": "Visual Place Recognition Using Rate-Encoded Spiking Neural Networks with Discrete STDP Learning",
+   "year": 2026,
+   "date": "2026-07-15",
+   "kind": "preprint",
+   "venue": "arXiv (Cornell University)",
+   "volume": "",
+   "authors": [
+    "Altzi Tsanko",
+    "Katerina Maria Oikonomou",
+    "Antonios Gasteratos"
+   ],
+   "url": "https://doi.org/10.48550/arxiv.2607.13584",
+   "doi": "10.48550/arxiv.2607.13584",
+   "citations": 0
+  },
+  {
+   "title": "Enhancing plasma etching efficiency via physics-based modeling and machine learning",
+   "year": 2026,
+   "date": "2026-06-19",
+   "kind": "journal",
+   "venue": "Systems and Control Transactions",
+   "volume": "6",
+   "authors": [
+    "Eneri Boniakou",
+    "Yanhu Wang",
+    "Tzannis Vasileiadis",
+    "Sotiris Mouchtouris",
+    "Katerina Maria Oikonomou",
+    "Chloi Zormpa",
+    "Antonios Armaou",
+    "Vassilios Constantoudis",
+    "Εvangelos Gogolides",
+    "George Kokkoris"
+   ],
+   "url": "https://doi.org/10.69997/sct.112422",
+   "doi": "10.69997/sct.112422",
+   "citations": 0
+  },
+  {
+   "title": "A hybrid physics-machine learning framework for fast, predictive low-pressure plasma etching models",
+   "year": 2026,
+   "date": "2026-02-20",
+   "kind": "conference",
+   "venue": "Advanced Etch Technology and Process Integration for Nanopatterning",
+   "volume": "",
+   "authors": [
+    "Eneri Boniakou",
+    "Sotiris Mouchtouris",
+    "Katerina Maria Oikonomou",
+    "Tatiana Boura",
+    "Alex Kondi",
+    "Antonios Stellas",
+    "Vassilios Constantoudis",
+    "George Kokkoris"
+   ],
+   "url": "https://doi.org/10.1117/12.3108618",
+   "doi": "10.1117/12.3108618",
+   "citations": 0
+  },
+  {
+   "title": "UAV Object Detection and Positioning in a Mining Industrial Metaverse With Custom Geo‐Referenced Data",
+   "year": 2026,
+   "date": "2026-01-01",
+   "kind": "journal",
+   "venue": "IET Cyber-Physical Systems Theory & Applications",
+   "volume": "11",
+   "authors": [
+    "Vasiliki E. Balaska",
+    "Ioannis Tsampikos Papapetros",
+    "Katerina Maria Oikonomou",
+    "Loukas Bampis",
+    "Antonios C. Gasteratos"
+   ],
+   "url": "https://doi.org/10.1049/cps2.70048",
+   "doi": "10.1049/cps2.70048",
+   "citations": 3
+  },
+  {
+   "title": "Spiking Neural Network Feature Discrimination Boosts Modality Fusion",
+   "year": 2025,
+   "date": "2025-12-11",
+   "kind": "journal",
+   "venue": "IEEE Transactions on Cognitive and Developmental Systems",
+   "volume": "18",
+   "authors": [
+    "Katerina Maria Oikonomou",
+    "Ioannis Kansizoglou",
+    "Antonios C. Gasteratos"
+   ],
+   "url": "https://doi.org/10.1109/tcds.2025.3642931",
+   "doi": "10.1109/tcds.2025.3642931",
+   "citations": 1
+  },
+  {
+   "title": "3D Spiking Convolutional Networks for Robust Human Activity Recognition in AV Cabins",
+   "year": 2025,
+   "date": "2025-10-15",
+   "kind": "conference",
+   "venue": "IEEE International Conference on Imaging Systems and Techniques (IST)",
+   "volume": "",
+   "authors": [
+    "Dimitris E. Manolakis",
+    "Antonios X. Lalas",
+    "Katerina Maria Oikonomou",
+    "Antonios C. Gasteratos",
+    "Konstantinos Votis"
+   ],
+   "url": "https://doi.org/10.1109/ist66504.2025.11268431",
+   "doi": "10.1109/ist66504.2025.11268431",
+   "citations": 0
+  },
+  {
+   "title": "Reinforcement Learning with Spiking Neural Networks for Robotic Applications: A Survey",
+   "year": 2025,
+   "date": "2025-06-19",
+   "kind": "preprint",
+   "venue": "",
+   "volume": "",
+   "authors": [
+    "Katerina Maria Oikonomou",
+    "Ioannis Kansizoglou",
+    "Antonios C. Gasteratos"
+   ],
+   "url": "https://doi.org/10.36227/techrxiv.175037299.95344486/v1",
+   "doi": "10.36227/techrxiv.175037299.95344486/v1",
+   "citations": 2
+  },
+  {
+   "title": "Spiking neural networks: Towards bio-inspired multimodal perception in robotics",
+   "year": 2024,
+   "date": "2024-11-21",
+   "kind": "preprint",
+   "venue": "arXiv (Cornell University)",
+   "volume": "",
+   "authors": [
+    "Katerina Maria Oikonomou",
+    "Vasiliki E. Balaska",
+    "Konstantinos A. Tsintotas",
+    "Christos N. Mavridis",
+    "Ioannis Kansizoglou",
+    "Antonios C. Gasteratos"
+   ],
+   "url": "https://doi.org/10.48550/arxiv.2411.14147",
+   "doi": "10.48550/arxiv.2411.14147",
+   "citations": 0
+  },
+  {
+   "title": "Semantic-based visual vocabulary for loop closure detection",
+   "year": 2023,
+   "date": "2023-10-17",
+   "kind": "conference",
+   "venue": "IEEE International Conference on Imaging Systems and Techniques (IST)",
+   "volume": "8",
+   "authors": [
+    "Ioannis Tsampikos Papapetros",
+    "Katerina Maria Oikonomou",
+    "Ioannis Kansizoglou",
+    "Konstantinos A. Tsintotas",
+    "Antonios C. Gasteratos"
+   ],
+   "url": "https://doi.org/10.1109/ist59124.2023.10355694",
+   "doi": "10.1109/ist59124.2023.10355694",
+   "citations": 2
+  },
+  {
+   "title": "Navigation with Care: The ASPiDA Assistive Robot",
+   "year": 2023,
+   "date": "2023-09-28",
+   "kind": "conference",
+   "venue": "International Workshop on Cellular Nanoscale Networks and their Applications (CNNA)",
+   "volume": "",
+   "authors": [
+    "Katerina Maria Oikonomou",
+    "Ioannis Tsampikos Papapetros",
+    "Ioannis Kansizoglou",
+    "Georgios Ch. Sirakoulis",
+    "Antonios C. Gasteratos"
+   ],
+   "url": "https://doi.org/10.1109/cnna60945.2023.10652808",
+   "doi": "10.1109/cnna60945.2023.10652808",
+   "citations": 1
+  },
+  {
+   "title": "A Bio-Inspired Elderly Action Recognition System for Ambient Assisted Living",
+   "year": 2023,
+   "date": "2023-09-28",
+   "kind": "conference",
+   "venue": "International Workshop on Cellular Nanoscale Networks and their Applications (CNNA)",
+   "volume": "",
+   "authors": [
+    "Katerina Maria Oikonomou",
+    "Ioannis Kansizoglou",
+    "Ioannis Tsampikos Papapetros",
+    "Antonios C. Gasteratos"
+   ],
+   "url": "https://doi.org/10.1109/cnna60945.2023.10652802",
+   "doi": "10.1109/cnna60945.2023.10652802",
+   "citations": 1
+  },
+  {
+   "title": "A Hybrid Reinforcement Learning Approach With a Spiking Actor Network for Efficient Robotic Arm Target Reaching",
+   "year": 2023,
+   "date": "2023-04-05",
+   "kind": "journal",
+   "venue": "IEEE Robotics and Automation Letters",
+   "volume": "8",
+   "authors": [
+    "Katerina Maria Oikonomou",
+    "Ioannis Kansizoglou",
+    "Antonios C. Gasteratos"
+   ],
+   "url": "https://doi.org/10.1109/lra.2023.3264836",
+   "doi": "10.1109/lra.2023.3264836",
+   "citations": 37
+  },
+  {
+   "title": "A Survey on Technical Challenges of Assistive Robotics for Elder People in Domestic Environments: The ASPiDA Concept",
+   "year": 2023,
+   "date": "2023-03-24",
+   "kind": "journal",
+   "venue": "IEEE Transactions on Medical Robotics and Bionics",
+   "volume": "5",
+   "authors": [
+    "Christoforos Keroglou",
+    "Ioannis Kansizoglou",
+    "Panagiotis Michailidis",
+    "Katerina Maria Oikonomou",
+    "Ioannis Tsampikos Papapetros",
+    "Paraskevi Dragkola",
+    "Iakovos Michailidis",
+    "Antonios C. Gasteratos",
+    "Elias B. Kosmatopoulos",
+    "Georgios Ch. Sirakoulis"
+   ],
+   "url": "https://doi.org/10.1109/tmrb.2023.3261342",
+   "doi": "10.1109/tmrb.2023.3261342",
+   "citations": 33
+  },
+  {
+   "title": "A Hybrid Spiking Neural Network Reinforcement Learning Agent for Energy-Efficient Object Manipulation",
+   "year": 2023,
+   "date": "2023-01-24",
+   "kind": "journal",
+   "venue": "Machines",
+   "volume": "11",
+   "authors": [
+    "Katerina Maria Oikonomou",
+    "Ioannis Kansizoglou",
+    "Antonios C. Gasteratos"
+   ],
+   "url": "https://doi.org/10.3390/machines11020162",
+   "doi": "10.3390/machines11020162",
+   "citations": 19
+  },
+  {
+   "title": "A Framework for Active Vision-Based Robot Planning using Spiking Neural Networks",
+   "year": 2022,
+   "date": "2022-06-28",
+   "kind": "conference",
+   "venue": "Mediterranean Conference on Control and Automation (MED)",
+   "volume": "",
+   "authors": [
+    "Katerina Maria Oikonomou",
+    "Ioannis Kansizoglou",
+    "Antonios C. Gasteratos"
+   ],
+   "url": "https://doi.org/10.1109/med54222.2022.9837132",
+   "doi": "10.1109/med54222.2022.9837132",
+   "citations": 8
+  },
+  {
+   "title": "Joint-Aware Action Recognition for Ambient Assisted Living",
+   "year": 2022,
+   "date": "2022-06-21",
+   "kind": "conference",
+   "venue": "IEEE International Conference on Imaging Systems and Techniques (IST)",
+   "volume": "",
+   "authors": [
+    "Katerina Maria Oikonomou",
+    "Ioannis Kansizoglou",
+    "Pelagia Manaveli",
+    "Athanasios Gkrekidis",
+    "Dimitrios Menychtas",
+    "Nikolaos Aggelousis",
+    "Georgios Ch. Sirakoulis",
+    "Antonios C. Gasteratos"
+   ],
+   "url": "https://doi.org/10.1109/ist55454.2022.9827760",
+   "doi": "10.1109/ist55454.2022.9827760",
+   "citations": 13
+  },
+  {
+   "title": "Improving Traversability Estimation Through Autonomous Robot Experimentation",
+   "year": 2019,
+   "date": "2019-01-01",
+   "kind": "other",
+   "venue": "Lecture notes in computer science",
+   "volume": "",
+   "authors": [
+    "Christos Sevastopoulos",
+    "Katerina Maria Oikonomou",
+    "Stasinos Konstantopoulos"
+   ],
+   "url": "https://doi.org/10.1007/978-3-030-34995-0_17",
+   "doi": "10.1007/978-3-030-34995-0_17",
+   "citations": 12
+  }
+ ]
+}
