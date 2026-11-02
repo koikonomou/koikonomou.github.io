@@ -63,6 +63,7 @@
 
     html { scroll-behavior: smooth; }
 
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
     body {
       background: var(--cream);
       color: var(--ink);
@@ -225,6 +226,8 @@
       transition: background .15s;
     }
     .pub-item:last-child { border-bottom: none; }
+    .pub-item[hidden] { display: none; }
+    .pub-item > div { min-width: 0; overflow-wrap: anywhere; }
     .pub-code {
       font-family: var(--serif); font-style: italic; font-size: .85rem;
       color: var(--accent2); min-width: 3.5rem;
@@ -337,9 +340,11 @@
     @media (max-width: 900px) {
       #hero { grid-template-columns: 1fr; min-height: auto; }
       #hero { padding-top: 4.5rem; }
-      .hero-image { order: -1; padding: 2.5rem 1.5rem 0; justify-content: flex-start; }
-      .hero-image { align-items: flex-start; gap: 1.5rem; }
-      .stats-src { margin-top: -1rem; }
+      .hero-image { display: contents; }
+      .hero-image img { order: -1; margin: 2.5rem 1.5rem 0; }
+      .hero-text { padding-bottom: 1.5rem; }
+      .stats { margin: 0 1.5rem; }
+      .stats-src { margin: .6rem 1.5rem 3.5rem; }
       .stat { min-width: 0; flex: 1; padding: .7rem .6rem; }
       .stat-n { font-size: 1.6rem; }
       .stat-l { letter-spacing: .04em; font-size: .6rem; }
@@ -350,17 +355,22 @@
       .teach-grid { grid-template-columns: 1fr; }
       .proj-grid { grid-template-columns: 1fr 1fr; }
       nav {
-        padding: .9rem 1.5rem; gap: 1.4rem; justify-content: flex-start;
-        overflow-x: auto; white-space: nowrap; scrollbar-width: none;
+        padding: .85rem .75rem; gap: .35rem .95rem; justify-content: center; flex-wrap: wrap;
       }
-      nav::-webkit-scrollbar { display: none; }
       nav .brand { display: none; }
-      nav a { font-size: .72rem; letter-spacing: .1em; }
+      nav a { font-size: .66rem; letter-spacing: .05em; }
     }
     @media (max-width: 560px) {
       .proj-grid { grid-template-columns: 1fr; }
-      .pub-item { grid-template-columns: 1fr; gap: .5rem; }
-      .pub-meta { flex-direction: row; align-items: center; }
+      .pub-item {
+        grid-template-columns: auto 1fr; grid-template-areas: "year meta" "body body";
+        gap: .35rem .8rem; padding: 1.2rem 0;
+      }
+      .pub-item > .pub-code { grid-area: year; min-width: 0; }
+      .pub-item > div:not(.pub-meta) { grid-area: body; }
+      .pub-meta { grid-area: meta; flex-direction: row; align-items: center; justify-content: flex-end; gap: .6rem; }
+      .pub-title { font-size: .92rem; }
+      .pub-authors, .pub-venue { font-size: .76rem; }
       .hero-links .btn { padding: .6rem 1.1rem; }
     }
   </style>
@@ -487,7 +497,7 @@
               <div class="pub-venue">IEEE Transactions on Artificial Intelligence</div>
               <a class="pub-link" href="https://doi.org/10.36227/techrxiv.175037299.95344486/v1" target="_blank" rel="noopener">Preprint on TechRxiv ↗</a>
             </div>
-            <span class="pub-badge review">Under Review</span>
+            <div class="pub-meta"><span class="pub-badge review">Under Review</span></div>
           </div>
         </div>
       </div>
