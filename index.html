@@ -100,7 +100,7 @@
     #hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       padding-top: 5rem;
     }
 
@@ -162,10 +162,10 @@
 
     /* ── STATS ── */
     .hero-image { flex-direction: column; gap: 2rem; }
-    .stats { display: flex; gap: .8rem; }
+    .stats { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
     .stats[hidden] { display: none; }
     .stat {
-      min-width: 6.5rem; padding: .9rem 1.1rem; text-align: center;
+      flex: 1 1 0; min-width: max-content; padding: .9rem 1rem; text-align: center;
       background: var(--cream); border: 1px solid var(--rule); border-radius: 4px;
     }
     .stat-n {
@@ -173,8 +173,8 @@
       line-height: 1; color: var(--accent);
     }
     .stat-l {
-      display: block; margin-top: .35rem; font-size: .64rem; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--mid);
+      display: block; margin-top: .35rem; font-size: .62rem; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--mid); white-space: nowrap;
     }
     .stats-src { font-size: .68rem; color: var(--mid); margin-top: -1.3rem; }
     .stats-src a { color: inherit; }
@@ -341,11 +341,11 @@
       #hero { grid-template-columns: 1fr; min-height: auto; }
       #hero { padding-top: 4.5rem; }
       .hero-image { display: contents; }
-      .hero-image img { order: -1; margin: 2.5rem 1.5rem 0; }
+      .hero-image img { order: -1; margin: 2.5rem auto 0; }
       .hero-text { padding-bottom: 1.5rem; }
-      .stats { margin: 0 1.5rem; }
-      .stats-src { margin: .6rem 1.5rem 3.5rem; }
-      .stat { min-width: 0; flex: 1; padding: .7rem .6rem; }
+      .stats { margin: 0 1.5rem; justify-content: center; gap: .6rem; }
+      .stats-src { margin: .6rem 1.5rem 3.5rem; text-align: center; }
+      .stat { padding: .7rem .5rem; max-width: 8.5rem; }
       .stat-n { font-size: 1.6rem; }
       .stat-l { letter-spacing: .04em; font-size: .6rem; }
       .hero-image img { width: 200px; box-shadow: 0 0 0 6px var(--cream), 0 0 0 7px var(--rule); }
