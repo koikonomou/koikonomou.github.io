@@ -176,19 +176,6 @@
     .stats-src { font-size: .68rem; color: var(--mid); margin-top: -1.3rem; }
     .stats-src a { color: inherit; }
 
-    /* ── NEWS ── */
-    .news-list { list-style: none; max-width: 52rem; }
-    .news-list li {
-      display: grid; grid-template-columns: 7rem 1fr; gap: 1.5rem;
-      padding: 1rem 0; border-bottom: 1px solid var(--rule);
-      font-size: .93rem; color: var(--ink); line-height: 1.6;
-    }
-    .news-list li:last-child { border-bottom: none; }
-    .news-date {
-      font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--accent2);
-    }
-    .news-list em { color: var(--mid); }
-
     /* ── SECTIONS ── */
     section { padding: 6rem 8rem; border-top: 1px solid var(--rule); }
     section:nth-child(even) { background: #f2ede6; }
@@ -354,7 +341,6 @@
       .stat { min-width: 0; flex: 1; padding: .7rem .6rem; }
       .stat-n { font-size: 1.6rem; }
       .stat-l { letter-spacing: .04em; font-size: .6rem; }
-      .news-list li { grid-template-columns: 1fr; gap: .1rem; }
       .hero-image img { width: 200px; box-shadow: 0 0 0 6px var(--cream), 0 0 0 7px var(--rule); }
       .hero-text { padding: 2rem 1.5rem 4rem; }
       section { padding: 4rem 1.5rem; }
@@ -383,7 +369,6 @@
   <nav aria-label="Main">
     <a class="brand" href="#hero">K. M. Oikonomou</a>
     <a href="#about">About</a>
-    <a href="#news">News</a>
     <a href="#publications">Publications</a>
     <a href="#teaching">Teaching</a>
     <a href="#projects">Projects</a>
@@ -477,30 +462,11 @@
     </div>
   </section>
 
-  <!-- NEWS -->
-  <section id="news">
-    <div class="reveal">
-      <div class="section-header">
-        <span class="section-num">02</span>
-        <h2>News</h2>
-      </div>
-      <ul class="news-list">
-        <li><span class="news-date">Autumn 2026</span><span>Teaching <strong>Robotics</strong> and <strong>Artificial Intelligence</strong> at the University of the Aegean, Department of Product &amp; Systems Design Engineering (ESPA Academic Experience Fellowship).</span></li>
-        <li><span class="news-date">Sep 2026</span><span>New preprint on DeepONet-based surrogate modelling of an inductively coupled plasma reactor (Plasma-AI).</span></li>
-        <li><span class="news-date">Jul 2026</span><span>New preprint on arXiv: visual place recognition using rate-encoded spiking neural networks.</span></li>
-        <li><span class="news-date">Jun 2026</span><span>Paper on plasma-etching efficiency via physics-based modelling and machine learning published in <em>Systems and Control Transactions</em>.</span></li>
-        <li><span class="news-date">Jan 2026</span><span>Joined <strong>Pharos</strong>, the Greek AI Factory, at NCSR Demokritos. Our UAV detection paper appeared in <em>IET Cyber-Physical Systems</em>.</span></li>
-        <li><span class="news-date">Dec 2025</span><span>Paper on spiking feature discrimination for modality fusion published in <em>IEEE Transactions on Cognitive and Developmental Systems</em>.</span></li>
-        <li><span class="news-date">2025</span><span>Completed my <strong>PhD</strong> at Democritus University of Thrace on spiking neural networks for perception and control in assistive robotics.</span></li>
-      </ul>
-    </div>
-  </section>
-
   <!-- PUBLICATIONS -->
   <section id="publications">
     <div class="reveal">
       <div class="section-header">
-        <span class="section-num">03</span>
+        <span class="section-num">02</span>
         <h2>Publications</h2>
       </div>
 
@@ -536,7 +502,7 @@
   <section id="teaching">
     <div class="reveal">
       <div class="section-header">
-        <span class="section-num">04</span>
+        <span class="section-num">03</span>
         <h2>Teaching</h2>
       </div>
       <div class="teach-grid">
@@ -612,7 +578,7 @@
   <section id="projects">
     <div class="reveal">
       <div class="section-header">
-        <span class="section-num">05</span>
+        <span class="section-num">04</span>
         <h2>Research Projects</h2>
       </div>
       <div class="proj-grid">
