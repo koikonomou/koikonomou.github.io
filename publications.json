@@ -100,7 +100,7 @@
    ],
    "url": "https://doi.org/10.1049/cps2.70048",
    "doi": "10.1049/cps2.70048",
-   "citations": 3
+   "citations": 5
   },
   {
    "title": "Spiking Neural Network Feature Discrimination Boosts Modality Fusion",
@@ -222,7 +222,7 @@
    ],
    "url": "https://doi.org/10.1109/cnna60945.2023.10652802",
    "doi": "10.1109/cnna60945.2023.10652802",
-   "citations": 1
+   "citations": 2
   },
   {
    "title": "A Hybrid Reinforcement Learning Approach With a Spiking Actor Network for Efficient Robotic Arm Target Reaching",
