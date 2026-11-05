@@ -2,7 +2,7 @@
  "source": "https://openalex.org/authors/a5041627686",
  "stats": {
   "works": 19,
-  "citations": 132,
+  "citations": 136,
   "h_index": 6
  },
  "works": [
@@ -82,7 +82,7 @@
    ],
    "url": "https://doi.org/10.1117/12.3108618",
    "doi": "10.1117/12.3108618",
-   "citations": 0
+   "citations": 1
   },
   {
    "title": "UAV Object Detection and Positioning in a Mining Industrial Metaverse With Custom Geo‐Referenced Data",
