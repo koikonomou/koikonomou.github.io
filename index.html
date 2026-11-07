@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Katerina Maria Oikonomou</title>
-  <meta name="description" content="Katerina Maria Oikonomou, Postdoctoral Researcher at Democritus University of Thrace and NCSR Demokritos, working on spiking neural networks, computer vision and robotics." />
+  <meta name="description" content="Dr. Katerina Maria Oikonomou (Aikaterini Maria Oikonomou, Αικατερίνη Μαρία Οικονόμου), Postdoctoral Researcher at Democritus University of Thrace and NCSR Demokritos, working on spiking neural networks, computer vision and robotics." />
   <link rel="canonical" href="https://koikonomou.github.io/" />
   <meta name="theme-color" content="#f7f4ef" />
   <meta property="og:type" content="profile" />
@@ -21,6 +21,18 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Katerina Maria Oikonomou",
+    "alternateName": [
+      "Aikaterini Maria Oikonomou",
+      "Katerina Oikonomou",
+      "Aikaterini Oikonomou",
+      "K. M. Oikonomou",
+      "Αικατερίνη Μαρία Οικονόμου",
+      "Κατερίνα Μαρία Οικονόμου",
+      "Κατερίνα Οικονόμου"
+    ],
+    "givenName": "Katerina",
+    "additionalName": "Maria",
+    "familyName": "Oikonomou",
     "honorificPrefix": "Dr.",
     "jobTitle": "Postdoctoral Researcher",
     "url": "https://koikonomou.github.io/",
@@ -46,7 +58,7 @@
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=EB+Garamond:ital,wght@1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -118,6 +130,16 @@
       font-weight: 300; line-height: 1.1; margin-bottom: 1.8rem;
     }
     .hero-name em { font-style: normal; color: var(--ink); }
+    .hero-alt {
+      margin: -1rem 0 1.8rem; font-family: var(--serif); font-style: italic;
+      font-size: 1.05rem; color: var(--mid);
+    }
+    .hero-alt span { white-space: nowrap; }
+    .hero-alt [lang="el"] { font-family: 'EB Garamond', var(--serif); font-size: .95em; }
+    @media (max-width: 560px) {
+      .hero-alt .sep { display: none; }
+      .hero-alt [lang="el"] { display: block; }
+    }
     .hero-tags {
       display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2.2rem;
     }
@@ -396,6 +418,7 @@
         <em>Maria</em><br>
         Oikonomou
       </h1>
+      <p class="hero-alt"><span>Aikaterini Maria Oikonomou</span> <span class="sep">·</span> <span lang="el">Αικατερίνη Μαρία Οικονόμου</span></p>
       <div class="hero-tags">
         <span class="tag">Spiking Neural Networks</span>
         <span class="tag">Computer Vision</span>
