@@ -2,7 +2,7 @@
  "source": "https://openalex.org/authors/a5041627686",
  "stats": {
   "works": 19,
-  "citations": 136,
+  "citations": 147,
   "h_index": 6
  },
  "works": [
@@ -100,7 +100,7 @@
    ],
    "url": "https://doi.org/10.1049/cps2.70048",
    "doi": "10.1049/cps2.70048",
-   "citations": 5
+   "citations": 6
   },
   {
    "title": "Spiking Neural Network Feature Discrimination Boosts Modality Fusion",
@@ -116,7 +116,7 @@
    ],
    "url": "https://doi.org/10.1109/tcds.2025.3642931",
    "doi": "10.1109/tcds.2025.3642931",
-   "citations": 1
+   "citations": 2
   },
   {
    "title": "3D Spiking Convolutional Networks for Robust Human Activity Recognition in AV Cabins",
@@ -150,7 +150,7 @@
    ],
    "url": "https://doi.org/10.36227/techrxiv.175037299.95344486/v1",
    "doi": "10.36227/techrxiv.175037299.95344486/v1",
-   "citations": 2
+   "citations": 3
   },
   {
    "title": "Spiking neural networks: Towards bio-inspired multimodal perception in robotics",
@@ -238,7 +238,7 @@
    ],
    "url": "https://doi.org/10.1109/lra.2023.3264836",
    "doi": "10.1109/lra.2023.3264836",
-   "citations": 37
+   "citations": 41
   },
   {
    "title": "A Survey on Technical Challenges of Assistive Robotics for Elder People in Domestic Environments: The ASPiDA Concept",
@@ -261,7 +261,7 @@
    ],
    "url": "https://doi.org/10.1109/tmrb.2023.3261342",
    "doi": "10.1109/tmrb.2023.3261342",
-   "citations": 33
+   "citations": 34
   },
   {
    "title": "A Hybrid Spiking Neural Network Reinforcement Learning Agent for Energy-Efficient Object Manipulation",
@@ -277,7 +277,7 @@
    ],
    "url": "https://doi.org/10.3390/machines11020162",
    "doi": "10.3390/machines11020162",
-   "citations": 19
+   "citations": 20
   },
   {
    "title": "A Framework for Active Vision-Based Robot Planning using Spiking Neural Networks",
@@ -293,7 +293,7 @@
    ],
    "url": "https://doi.org/10.1109/med54222.2022.9837132",
    "doi": "10.1109/med54222.2022.9837132",
-   "citations": 8
+   "citations": 9
   },
   {
    "title": "Joint-Aware Action Recognition for Ambient Assisted Living",
@@ -330,7 +330,7 @@
    ],
    "url": "https://doi.org/10.1007/978-3-030-34995-0_17",
    "doi": "10.1007/978-3-030-34995-0_17",
-   "citations": 12
+   "citations": 13
   }
  ]
 }
