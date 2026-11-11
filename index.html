@@ -240,6 +240,31 @@
       margin-top: .4rem; flex-shrink: 0;
     }
 
+    /* ── EDUCATION ── */
+    .edu { margin-top: 4rem; }
+    .edu-label {
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--accent2); margin-bottom: 1.2rem;
+    }
+    .edu-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+    .edu-card {
+      padding: 1.6rem 1.8rem; border: 1px solid var(--rule); border-radius: 4px;
+      background: var(--cream);
+    }
+    .edu-years {
+      display: block; font-size: .7rem; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: .7rem;
+    }
+    .edu-degree { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; line-height: 1.25; }
+    .edu-uni { font-size: .85rem; color: var(--mid); margin-top: .2rem; }
+    .edu-thesis {
+      margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--rule);
+      font-size: .86rem; font-style: italic; color: var(--ink); line-height: 1.55;
+    }
+    .edu-thesis a { color: var(--accent); text-decoration: none; }
+    .edu-thesis a:hover { text-decoration: underline; }
+    .edu-note { font-size: .75rem; color: var(--mid); margin-top: .5rem; }
+
     /* ── PUBLICATIONS ── */
     .pub-list { display: flex; flex-direction: column; gap: 0; }
     .pub-item {
@@ -375,6 +400,8 @@
       .hero-text { padding: 2rem 1.5rem 4rem; }
       section { padding: 4rem 1.5rem; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .edu { margin-top: 3rem; }
+      .edu-grid { grid-template-columns: 1fr; }
       .teach-grid { grid-template-columns: 1fr; }
       .proj-grid { grid-template-columns: 1fr 1fr; }
       nav {
@@ -476,12 +503,6 @@
             such as spike-based communication, can lead to more efficient and adaptive AI systems.
           </p>
           <p>
-            I completed my PhD at DUTH (2021–2025) under Prof. Antonios Gasteratos, on
-            <a href="https://www.didaktorika.gr/eadd/handle/10442/59503" target="_blank" rel="noopener" style="color:var(--accent)"><em>Spiking Neural Networks for Perception and Control in Human Assistive Robotic Systems</em></a>.
-            Before that, I studied Physics at the University of Patras and completed an MSc in
-            Automation Systems at NTUA.
-          </p>
-          <p>
             <a href="mailto:k.m.oikonomou@pm.me" style="color:var(--accent)">k.m.oikonomou@pm.me</a>
           </p>
         </div>
@@ -492,6 +513,34 @@
             <div class="pill"><span class="pill-dot"></span>Action recognition for ambient assisted living</div>
             <div class="pill"><span class="pill-dot"></span>Bio-inspired feature discrimination &amp; modality fusion</div>
             <div class="pill"><span class="pill-dot"></span>AI for scientific &amp; industrial applications (plasma, mining)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu">
+        <div class="edu-label">Education</div>
+        <div class="edu-grid">
+          <div class="edu-card">
+            <span class="edu-years">2021 – 2025</span>
+            <div class="edu-degree">PhD</div>
+            <div class="edu-uni">Democritus University of Thrace</div>
+            <div class="edu-thesis">
+              <a href="https://www.didaktorika.gr/eadd/handle/10442/59503" target="_blank" rel="noopener">Spiking Neural Networks for Perception and Control in Human Assistive Robotic Systems ↗</a>
+            </div>
+            <div class="edu-note">Advisor: Prof. Antonios Gasteratos</div>
+          </div>
+          <div class="edu-card">
+            <span class="edu-years">2018 – 2021</span>
+            <div class="edu-degree">MSc in Automation Systems</div>
+            <div class="edu-uni">National Technical University of Athens</div>
+            <div class="edu-thesis">Semantic Segmentation for ADL in Assistive Robotics and Comparison of RGB/RGB-D Input and Single/Multiple Viewpoints</div>
+            <div class="edu-note">Thesis carried out at the University of Bremen</div>
+          </div>
+          <div class="edu-card">
+            <span class="edu-years">2013 – 2018</span>
+            <div class="edu-degree">BSc in Physics</div>
+            <div class="edu-uni">University of Patras</div>
+            <div class="edu-thesis">EEG Signal Classification Evoked from Music Stimuli</div>
           </div>
         </div>
       </div>
