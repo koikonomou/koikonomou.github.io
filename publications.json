@@ -2,7 +2,7 @@
  "source": "https://openalex.org/authors/a5041627686",
  "stats": {
   "works": 19,
-  "citations": 147,
+  "citations": 148,
   "h_index": 6
  },
  "works": [
@@ -238,7 +238,7 @@
    ],
    "url": "https://doi.org/10.1109/lra.2023.3264836",
    "doi": "10.1109/lra.2023.3264836",
-   "citations": 41
+   "citations": 42
   },
   {
    "title": "A Survey on Technical Challenges of Assistive Robotics for Elder People in Domestic Environments: The ASPiDA Concept",
