@@ -2,8 +2,8 @@
  "source": "https://openalex.org/authors/a5041627686",
  "stats": {
   "works": 20,
-  "citations": 148,
-  "h_index": 6
+  "citations": 167,
+  "h_index": 7
  },
  "works": [
   {
@@ -100,7 +100,7 @@
    ],
    "url": "https://doi.org/10.1049/cps2.70048",
    "doi": "10.1049/cps2.70048",
-   "citations": 6
+   "citations": 7
   },
   {
    "title": "Spiking Neural Network Feature Discrimination Boosts Modality Fusion",
@@ -116,7 +116,7 @@
    ],
    "url": "https://doi.org/10.1109/tcds.2025.3642931",
    "doi": "10.1109/tcds.2025.3642931",
-   "citations": 2
+   "citations": 3
   },
   {
    "title": "3D Spiking Convolutional Networks for Robust Human Activity Recognition in AV Cabins",
@@ -134,7 +134,7 @@
    ],
    "url": "https://doi.org/10.1109/ist66504.2025.11268431",
    "doi": "10.1109/ist66504.2025.11268431",
-   "citations": 0
+   "citations": 1
   },
   {
    "title": "Reinforcement Learning with Spiking Neural Networks for Robotic Applications: A Survey",
@@ -150,7 +150,7 @@
    ],
    "url": "https://doi.org/10.36227/techrxiv.175037299.95344486/v1",
    "doi": "10.36227/techrxiv.175037299.95344486/v1",
-   "citations": 3
+   "citations": 4
   },
   {
    "title": "Spiking neural networks: Towards bio-inspired multimodal perception in robotics",
@@ -187,7 +187,7 @@
    ],
    "url": "https://doi.org/10.1109/ist59124.2023.10355694",
    "doi": "10.1109/ist59124.2023.10355694",
-   "citations": 2
+   "citations": 6
   },
   {
    "title": "Navigation with Care: The ASPiDA Assistive Robot",
@@ -238,7 +238,7 @@
    ],
    "url": "https://doi.org/10.1109/lra.2023.3264836",
    "doi": "10.1109/lra.2023.3264836",
-   "citations": 42
+   "citations": 46
   },
   {
    "title": "A Survey on Technical Challenges of Assistive Robotics for Elder People in Domestic Environments: The ASPiDA Concept",
@@ -261,7 +261,7 @@
    ],
    "url": "https://doi.org/10.1109/tmrb.2023.3261342",
    "doi": "10.1109/tmrb.2023.3261342",
-   "citations": 34
+   "citations": 36
   },
   {
    "title": "A Hybrid Spiking Neural Network Reinforcement Learning Agent for Energy-Efficient Object Manipulation",
@@ -277,7 +277,7 @@
    ],
    "url": "https://doi.org/10.3390/machines11020162",
    "doi": "10.3390/machines11020162",
-   "citations": 20
+   "citations": 23
   },
   {
    "title": "A Framework for Active Vision-Based Robot Planning using Spiking Neural Networks",
@@ -314,7 +314,7 @@
    ],
    "url": "https://doi.org/10.1109/ist55454.2022.9827760",
    "doi": "10.1109/ist55454.2022.9827760",
-   "citations": 13
+   "citations": 15
   },
   {
    "title": "Improving Traversability Estimation Through Autonomous Robot Experimentation",
