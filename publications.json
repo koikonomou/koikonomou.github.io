@@ -2,7 +2,7 @@
  "source": "https://openalex.org/authors/a5041627686",
  "stats": {
   "works": 20,
-  "citations": 167,
+  "citations": 169,
   "h_index": 7
  },
  "works": [
@@ -100,7 +100,7 @@
    ],
    "url": "https://doi.org/10.1049/cps2.70048",
    "doi": "10.1049/cps2.70048",
-   "citations": 7
+   "citations": 8
   },
   {
    "title": "Spiking Neural Network Feature Discrimination Boosts Modality Fusion",
@@ -177,7 +177,7 @@
    "date": "2023-10-17",
    "kind": "conference",
    "venue": "IEEE International Conference on Imaging Systems and Techniques (IST)",
-   "volume": "8",
+   "volume": "",
    "authors": [
     "Ioannis Tsampikos Papapetros",
     "Katerina Maria Oikonomou",
@@ -222,7 +222,7 @@
    ],
    "url": "https://doi.org/10.1109/cnna60945.2023.10652802",
    "doi": "10.1109/cnna60945.2023.10652802",
-   "citations": 2
+   "citations": 3
   },
   {
    "title": "A Hybrid Reinforcement Learning Approach With a Spiking Actor Network for Efficient Robotic Arm Target Reaching",
