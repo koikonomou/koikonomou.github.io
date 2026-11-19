@@ -2,7 +2,7 @@
  "source": "https://openalex.org/authors/a5041627686",
  "stats": {
   "works": 20,
-  "citations": 169,
+  "citations": 170,
   "h_index": 7
  },
  "works": [
@@ -187,7 +187,7 @@
    ],
    "url": "https://doi.org/10.1109/ist59124.2023.10355694",
    "doi": "10.1109/ist59124.2023.10355694",
-   "citations": 6
+   "citations": 7
   },
   {
    "title": "Navigation with Care: The ASPiDA Assistive Robot",
