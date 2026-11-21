@@ -44,7 +44,7 @@
    "title": "Enhancing plasma etching efficiency via physics-based modeling and machine learning",
    "year": 2026,
    "date": "2026-06-19",
-   "kind": "journal",
+   "kind": "conference",
    "venue": "Systems and Control Transactions",
    "volume": "6",
    "authors": [
@@ -319,7 +319,7 @@
   {
    "title": "Improving Traversability Estimation Through Autonomous Robot Experimentation",
    "year": 2019,
-   "date": "2019-11-22",
+   "date": "2019-11-23",
    "kind": "other",
    "venue": "Lecture notes in computer science",
    "volume": "",
